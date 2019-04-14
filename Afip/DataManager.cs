@@ -11,7 +11,8 @@ namespace Afip
     {
 
        
-        public DataManager() {             
+        public DataManager()
+        {             
             var dbManager = new SQLiteDb( ConfigurationManager.AppSettings["sqliteUrl"]);
         }
     }
