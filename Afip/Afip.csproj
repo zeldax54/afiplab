@@ -69,9 +69,19 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.UI, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="TelerikCommon, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\AFIP_WS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Wsaa\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -89,9 +99,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="WsManager.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -219,6 +231,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AFIP_WS\service.wsdl" />
+    <None Include="Connected Services\Wsaa\Afip.Wsaa.loginCmsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Wsaa\LoginCms.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -240,6 +256,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AFIP_WS\" />
+    <WCFMetadataStorage Include="Connected Services\Wsaa\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AFIP_WS\configuration91.svcinfo" />
@@ -249,6 +266,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AFIP_WS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Wsaa\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Wsaa\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Wsaa\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -18,10 +18,70 @@ namespace Afip
         {
             using (SQLiteConnection db = new SQLiteConnection(_path))
             {
+                db.CreateTable<Factura>();
+                db.CreateTable<Precio>();
+                db.CreateTable<Servicio>();
                 db.CreateTable<usuario>();
             }
         }
     }
+    public partial class Factura
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 Id { get; set; }
+        
+        [NotNull]
+        public DateTime fechacreacion { get; set; }
+        
+        [NotNull]
+        public Byte[] servicioId { get; set; }
+        
+        [NotNull]
+        public Decimal cantidad { get; set; }
+        
+        [NotNull]
+        public Decimal precio { get; set; }
+        
+        [NotNull]
+        public Decimal total { get; set; }
+        
+        [NotNull]
+        public String nombrecliente { get; set; }
+        
+        [NotNull]
+        public String letrafact { get; set; }
+        
+    }
+    
+    public partial class Precio
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 Id { get; set; }
+        
+        [NotNull]
+        public Int64 ServicioId { get; set; }
+        
+        [NotNull]
+        public Decimal precio { get; set; }
+        
+        [NotNull]
+        public DateTime vigenciaDesde { get; set; }
+        
+        [NotNull]
+        public DateTime vigenciaHasta { get; set; }
+        
+    }
+    
+    public partial class Servicio
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 Id { get; set; }
+        
+        [NotNull]
+        public String nombre { get; set; }
+        
+    }
+    
     public partial class usuario
     {
         [PrimaryKey, AutoIncrement]
