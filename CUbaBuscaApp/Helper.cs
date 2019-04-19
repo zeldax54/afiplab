@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using log4net;
+using Telerik.WinControls;
 using Telerik.WinControls.UI;
 namespace CUbaBuscaApp
 {
@@ -23,7 +25,7 @@ namespace CUbaBuscaApp
             ReportarMensajes?.Invoke(mjg);
         }
 
-
+       
 
         public static string FindBetweenChars(string texto, string chars = "(")
         {
@@ -69,14 +71,69 @@ namespace CUbaBuscaApp
 
         public static void InicializarGrid(RadGridView r,string[]columnsBlock,bool fillDock=false) {
 
+            foreach (var colum in r.Columns)
+                colum.HeaderText = colum.Name.ToUpper();
+
             r.AllowAddNewRow = true;
             r.AllowAddNewRow = true;
-            r.AllowDeleteRow = true;
-            r.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
+            r.AllowDeleteRow = true;            
             if(fillDock)
-            r.Dock = System.Windows.Forms.DockStyle.Fill;
-            foreach (var colum in columnsBlock)
+            r.Dock = System.Windows.Forms.DockStyle.Fill;           
+            foreach (var colum in columnsBlock) {
                 r.Columns[colum].ReadOnly = true;
+                r.Columns[colum].IsVisible = false;
+            }
+            r.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
+            
+        }
+      
+
+        public static void SetTheme(Control.ControlCollection controls,RadForm formulario)
+        {
+            var effectiveTheme = String.Empty;
+            formulario.Icon = Properties.Resources.Designcontest_Ecommerce_Business_Invoice;
+            switch (DataContainer.Instance().Themename.ToLower()) {
+
+                case "dark":
+                    effectiveTheme = "VisualStudio2012Dark";
+                    SaveThemeConfig("dark");
+                    break;
+                case "light":
+                    effectiveTheme = "VisualStudio2012Light";
+                    SaveThemeConfig("light");
+                    break;
+                case "metro":
+                    SaveThemeConfig("metro");
+                    effectiveTheme = "TelerikMetro";
+                    break;
+                default:
+                    SaveThemeConfig("metro");
+                    effectiveTheme = "TelerikMetro";
+                    break;
+
+            }
+           
+           formulario.ThemeName = effectiveTheme;
+            foreach (Control c in controls)
+            {
+                try
+                {
+                    
+                    (c as RadControl).ThemeName = effectiveTheme;
+                }
+                catch (Exception e) {
+                    Logger.WriteLog("Error cambiando tema " + e.Message);
+                }     
+            }              
+        }
+
+        private static void SaveThemeConfig(string val) {
+
+            var conf = DataContainer.Instance().dbManager.ConfigObjectByKey("tema");
+            conf.valor = val;
+            DataContainer.Instance().dbManager.ManageConfig(conf);
+
+
         }
 
     }

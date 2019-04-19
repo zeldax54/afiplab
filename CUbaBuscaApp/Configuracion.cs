@@ -21,7 +21,7 @@ namespace CUbaBuscaApp
         
         private void Configuracion_Load(object sender, EventArgs e)
         {
-           
+            Helper.SetTheme(this.Controls,this);
             radGridView1.DataSource= DataContainer.Instance().dbManager.ConfiguracionesList();
             Helper.InicializarGrid(radGridView1, new[] { "Id" });
             radGridView1.CellEndEdit += RadGridView1_CellEndEdit;

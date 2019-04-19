@@ -79,7 +79,9 @@
       <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Telerik.WinControls\v4.0_2018.1.116.40__5bb2a467cbec794e\Telerik.WinControls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.UI, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Telerik.WinControls.UI\v4.0_2018.1.116.40__5bb2a467cbec794e\Telerik.WinControls.UI.dll</HintPath>
@@ -97,9 +99,23 @@
     </Compile>
     <Compile Include="DataAccess.cs" />
     <Compile Include="DataCointainer.cs" />
+    <Compile Include="FacturaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturaForm.Designer.cs">
+      <DependentUpon>FacturaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="LoginManager.cs" />
     <Compile Include="MailReader.cs" />
+    <Compile Include="MessageManager.cs" />
+    <Compile Include="PreciosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreciosForm.Designer.cs">
+      <DependentUpon>PreciosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,6 +125,12 @@
     <Compile Include="Satrt.Designer.cs">
       <DependentUpon>Satrt.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServiociosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiociosForm.Designer.cs">
+      <DependentUpon>ServiociosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestClass.cs" />
     <Compile Include="Web References\Wsaa\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -117,6 +139,12 @@
     </Compile>
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturaForm.resx">
+      <DependentUpon>FacturaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreciosForm.resx">
+      <DependentUpon>PreciosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -131,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="Satrt.resx">
       <DependentUpon>Satrt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiociosForm.resx">
+      <DependentUpon>ServiociosForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -171,6 +202,27 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>CUbaBuscaApp_Wsaa_LoginCMSService</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_double.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\msoffice_Footer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-explorer-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1664540.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designcontest-Ecommerce-Business-Invoice.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.0.1\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.0.1\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />

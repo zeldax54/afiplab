@@ -18,9 +18,8 @@ namespace CUbaBuscaApp
      nuevamente se regula el alcance del constructor(con modificadores de acceso como protegido o privado). */
 
         private static DataContainer oInstance;
-
-
         public BdManager dbManager;
+        public string Themename;
         protected DataContainer()
         {
         }

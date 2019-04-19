@@ -53,7 +53,9 @@ namespace CUbaBuscaApp
         /// <param name="argProxyPassword">Password del proxy</param>
         /// <param name="argVerbose">Nivel detallado de descripcion? true/false</param>
         /// <remarks></remarks>
-        public string ObtenerLoginTicketResponse(string argServicio, string argUrlWsaa, string argRutaCertX509Firmante, SecureString argPassword, string argProxy, string argProxyUser, string argProxyPassword, bool argVerbose)
+        public Logininfo ObtenerLoginTicketResponse(string argServicio, string argUrlWsaa,
+            string argRutaCertX509Firmante, SecureString argPassword, string argProxy,
+            string argProxyUser, string argProxyPassword, bool argVerbose)
         {
             const string ID_FNC = "[ObtenerLoginTicketResponse]";
             this.RutaDelCertificadoFirmante = argRutaCertX509Firmante;
@@ -65,7 +67,7 @@ namespace CUbaBuscaApp
             XmlNode xmlNodoGenerationTime = default(XmlNode);
             XmlNode xmlNodoExpirationTime = default(XmlNode);
             XmlNode xmlNodoService = default(XmlNode);
-
+            Logininfo lI;
             // PASO 1: Genero el Login Ticket Request
             try
             {
@@ -157,18 +159,28 @@ namespace CUbaBuscaApp
                 XmlLoginTicketResponse = new XmlDocument();
                 XmlLoginTicketResponse.LoadXml(loginTicketResponse);
 
-                this.UniqueId = UInt32.Parse(XmlLoginTicketResponse.SelectSingleNode("//uniqueId").InnerText);
-                this.GenerationTime = DateTime.Parse(XmlLoginTicketResponse.SelectSingleNode("//generationTime").InnerText);
-                this.ExpirationTime = DateTime.Parse(XmlLoginTicketResponse.SelectSingleNode("//expirationTime").InnerText);
-                this.Sign = XmlLoginTicketResponse.SelectSingleNode("//sign").InnerText;
-                this.Token = XmlLoginTicketResponse.SelectSingleNode("//token").InnerText;
+                            this.UniqueId = UInt32.Parse(XmlLoginTicketResponse.SelectSingleNode("//uniqueId").InnerText);
+                            this.GenerationTime = DateTime.Parse(XmlLoginTicketResponse.SelectSingleNode("//generationTime").InnerText);
+                            this.ExpirationTime = DateTime.Parse(XmlLoginTicketResponse.SelectSingleNode("//expirationTime").InnerText);
+                            this.Sign = XmlLoginTicketResponse.SelectSingleNode("//sign").InnerText;
+                            this.Token = XmlLoginTicketResponse.SelectSingleNode("//token").InnerText;
+
+                  lI = new Logininfo() {
+                    uniqueId=this.UniqueId.ToString(),
+                    generationTime= this.GenerationTime,
+                    expirationTime=this.ExpirationTime,
+                    sign=this.Sign,
+                    token=this.Token
+                };
+                Logger.WriteLog(DataContainer.Instance().dbManager.SaveLogininfo(lI));
             }
             catch (Exception excepcionAlAnalizarLoginTicketResponse)
             {
                 Logger.WriteLog(ID_FNC + "***Error ANALIZANDO el LoginTicketResponse : " + excepcionAlAnalizarLoginTicketResponse.Message);
                 throw new Exception(ID_FNC + "***Error ANALIZANDO el LoginTicketResponse : " + excepcionAlAnalizarLoginTicketResponse.Message);
+                return null;
             }
-            return loginTicketResponse;
+            return lI;
         }
     }
 
@@ -249,12 +261,11 @@ namespace CUbaBuscaApp
     /// Clase principal
     /// </summary>
     /// <remarks></remarks>
-    public static class ProgramaPrincipal
+    public static class TicketServiceManager
     {
         // Valores por defecto, globales en esta clase
-        const string DEFAULT_URLWSAAWSDL = "https://wsaahomo.afip.gov.ar/ws/services/LoginCms";
-        const string DEFAULT_SERVICIO = "wsfe";
-        const string DEFAULT_CERTSIGNER = "c:\\certificado.pfx";
+       
+        const string DEFAULT_SERVICIO = "wsfe";       
         const string DEFAULT_PROXY = null;
         const string DEFAULT_PROXY_USER = "abcd";
         const string DEFAULT_PROXY_PASSWORD = "abcd";
@@ -266,13 +277,13 @@ namespace CUbaBuscaApp
         /// <param name="args">Argumentos de linea de comandos</param>
         /// <returns>0 si terminó bien, valores negativos si hubieron errores</returns>
         /// <remarks></remarks>
-        public static bool generarLog(string password)
+        public static Logininfo generarLog()
         {
             const string ID_FNC = "[Main]";
 
-            string strUrlWsaaWsdl = DEFAULT_URLWSAAWSDL;
+            string strUrlWsaaWsdl = DataContainer.Instance().dbManager.ConfigByKey("loginserverUrl");
             string strIdServicioNegocio = DEFAULT_SERVICIO;
-            string strRutaCertSigner = DEFAULT_CERTSIGNER;
+            string strRutaCertSigner = DataContainer.Instance().dbManager.ConfigByKey("DEFAULT_CERTSIGNER");
             SecureString strPasswordSecureString = new SecureString();
             string strProxy = DEFAULT_PROXY;
             string strProxyUser = DEFAULT_PROXY_USER;
@@ -280,14 +291,10 @@ namespace CUbaBuscaApp
             bool blnVerboseMode = DEFAULT_VERBOSE;
             string[] args = new string[] { };
 
+            string password= DataContainer.Instance().dbManager.ConfigByKey("pfxpassword");
             foreach (var p in password)
                 strPasswordSecureString.AppendChar(p);
-            strPasswordSecureString.MakeReadOnly();
-
-
-
-            // Argumentos OK, entonces procesar normalmente...
-
+            strPasswordSecureString.MakeReadOnly();        
             LoginTicket objTicketRespuesta = null;
             string strTicketRespuesta = null;
 
@@ -303,16 +310,15 @@ namespace CUbaBuscaApp
                 objTicketRespuesta = new LoginTicket();
                 if (blnVerboseMode)
                     Logger.WriteLog(ID_FNC + $"***Accediendo a {strUrlWsaaWsdl}");
-                strTicketRespuesta = objTicketRespuesta.ObtenerLoginTicketResponse(strIdServicioNegocio,
+                return objTicketRespuesta.ObtenerLoginTicketResponse(strIdServicioNegocio,
                 strUrlWsaaWsdl, strRutaCertSigner, strPasswordSecureString, strProxy, strProxyUser,
                 strProxyPassword, blnVerboseMode);
             }
             catch (Exception excepcionAlObtenerTicket)
             {
                 Logger.WriteLog(ID_FNC + "***EXCEPCION AL OBTENER TICKET: " + excepcionAlObtenerTicket.Message);
-                return false;
-            }
-            return true;
+                return null;
+            }          
         }
 
         /// <summary>
