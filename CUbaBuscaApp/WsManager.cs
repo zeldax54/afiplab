@@ -184,7 +184,7 @@ namespace CUbaBuscaApp
                 Logger.WriteLog("Factuarcion fallida");
                 Logger.WriteLog(ex.Message);
                 factura.estadoEnvioAfiperror = ex.Message;
-                factura.estadoId = 3;               
+                factura.estadoId = 6;               
                 DataContainer.Instance().dbManager.WriteFactura(factura, detalles);
                 return factura;
             }

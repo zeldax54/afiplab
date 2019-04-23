@@ -53,7 +53,13 @@ namespace CUbaBuscaApp
 
         private void RadGridView1_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
+
             Factura f = (Factura)e.Row.DataBoundItem;
+            if (f.estadoId == 3 || f.estadoId == 6 || f.estadoId==1) {
+                MessageManager.SowMessage("Comprobante rechazado o no emitido, se puede desechar.", ThemeName);
+                return;
+            }
+                
             IEnumerable< FacturaDetalles> detalles = DataContainer.Instance().dbManager.DetallesFromFactura((int)f.Id);
             new FacturaForm(f, detalles).ShowDialog();
         }
