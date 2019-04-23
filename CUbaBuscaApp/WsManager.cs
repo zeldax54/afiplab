@@ -58,7 +58,7 @@ namespace CUbaBuscaApp
 
 
         public static Factura Facturar(Factura factura,IEnumerable<FacturaDetalles> detalles,
-            afipService.CbteTipo tipofacT,int pPtoVta,bool isAulacion)
+            afipService.CbteTipo tipofacT,int pPtoVta,bool isAulacion,long nroanulado=0)
         {
             try
             {
@@ -124,7 +124,7 @@ namespace CUbaBuscaApp
                     {
                         CbteFch = factura.fechacreacion.ToString("yyyyMMdd"),
                         Cuit = getTicket().Cuit.ToString(),
-                        Nro = (long)factura.numeroFact,
+                        Nro = nroanulado,
                         PtoVta = pPtoVta,
                         Tipo = tipofacT.Id
 

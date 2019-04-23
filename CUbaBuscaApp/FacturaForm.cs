@@ -303,15 +303,27 @@ namespace CUbaBuscaApp
                  
                     int inverso = DataContainer.Instance().dbManager.idInverso((int)_Factura.cbteId);
                     var cbte = DataContainer.Instance().dbManager.TipofactById(inverso);
-                    Factura nC = _Factura;
+                    Factura nC = new Factura();
+                       
                     nC.cbteId = inverso;
                     nC.letrafact = cbte.Desc;
                     nC.Id = 0;
                     nC.cae = null;
                     nC.estadoId = 1;
                     nC.fechacreacion = DateTime.Now;
-                    var ncdetalles = _Detalles;
+                  
                     nC.originalidfact = _Factura.Id;
+                    nC.total = _Factura.total;
+                    nC.monedaId = _Factura.monedaId;
+                    nC.monedadesc = _Factura.monedadesc;
+                    nC.nombrecliente = _Factura.nombrecliente;
+                    nC.ptovta = _Factura.ptovta;
+                    nC.conceptoId = _Factura.conceptoId;
+                    nC.noGravado = _Factura.noGravado;
+                    nC.nombrecliente = _Factura.nombrecliente;
+                    var ncdetalles = _Detalles;
+                    
+
                     try
                     {
                         nC.Id = DataContainer.Instance().dbManager.SaveFact(nC);                  
@@ -319,10 +331,11 @@ namespace CUbaBuscaApp
                             d.facturaId = nC.Id;
                         DataContainer.Instance().dbManager.SaveFactDet(ncdetalles);                         
 
-                       var fact= WsManager.Facturar(nC, ncdetalles,  cbte,(int) nC.ptovta, true);
+                       var fact= WsManager.Facturar(nC, ncdetalles,  cbte,(int) nC.ptovta, true,(long)_Factura.numeroFact);
                         if (fact.estadoId == 2)
                         {
                             _Factura.estadoId = 5;
+                           
                             DataContainer.Instance().dbManager.WriteFactura(_Factura,_Detalles);
                             MessageManager.SowMessage("Anulada con exito", ThemeName);
                             Close();

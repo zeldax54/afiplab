@@ -60,7 +60,7 @@ namespace CUbaBuscaApp
 
         private void RadGridView1_CellFormatting(object sender, CellFormattingEventArgs e)
         {
-            if (e.Column.Name== "estadodesc")
+            if (e.Column.Name== "estadodesc" && e.CellElement.Value!=null)
             {
                 e.CellElement.DrawFill = true;
                 switch (e.CellElement.Value.ToString()) {
