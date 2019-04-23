@@ -17,6 +17,8 @@ namespace CUbaBuscaApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Satrt());
+           //Application.Run(new FacturaForm());
+
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,9 +85,58 @@ namespace CUbaBuscaApp
                 r.Columns[colum].IsVisible = false;
             }
             r.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
+            r.EnableFiltering = true;
             
         }
-      
+
+        public static void InicializarGridReadObly(RadGridView r, string[] columnsBlock)
+        {
+            foreach (var colum in r.Columns)
+                colum.HeaderText = colum.Name.ToUpper();        
+            r.AllowAddNewRow = false;
+            r.AllowDeleteRow = false;
+            r.AllowEditRow = false;
+            r.MultiSelect = false;
+            
+            if(columnsBlock!=null)
+            foreach (var colum in columnsBlock)
+            {
+                r.Columns[colum].ReadOnly = true;
+                r.Columns[colum].IsVisible = false;
+            }
+            r.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
+            r.EnableFiltering = true;
+
+        }
+
+        public static void OcularColumsCombo(RadMultiColumnComboBox [] combo,IEnumerable<string> hide)
+        {
+            foreach (var c in combo)                
+                foreach (var col in c.Columns)
+                    foreach (var h in hide)
+                        if (col.Name == h)
+                            col.IsVisible = false;
+        }
+
+        public static void HideSomeColums(RadGridView r, string[] columnsBlock) {
+
+            foreach (var colum in columnsBlock)
+            {
+                r.Columns[colum].ReadOnly = true;
+                r.Columns[colum].IsVisible = false;
+            }
+        }
+
+        public static float myparseFloat(string str) {
+            if (string.IsNullOrWhiteSpace(str))
+                str = "0";
+             str = str.Replace("%", "");
+            NumberFormatInfo formatInfo = new NumberFormatInfo();
+            formatInfo.CurrencyDecimalSeparator = ".";
+            return float.Parse(str, NumberStyles.AllowDecimalPoint, formatInfo);
+
+        }
+
 
         public static void SetTheme(Control.ControlCollection controls,RadForm formulario)
         {
@@ -106,10 +156,20 @@ namespace CUbaBuscaApp
                     SaveThemeConfig("metro");
                     effectiveTheme = "TelerikMetro";
                     break;
-                default:
-                    SaveThemeConfig("metro");
-                    effectiveTheme = "TelerikMetro";
+                case "blue":
+                    SaveThemeConfig("blue");
+                    effectiveTheme = "TelerikMetroBlue";
                     break;
+                 case "inicial":
+                    SaveThemeConfig("inicial");
+                    effectiveTheme = "ControlDefault";
+                    break;
+                default:
+                    SaveThemeConfig("inicial");
+                    effectiveTheme = "ControlDefault";
+                    break;
+
+                    
 
             }
            
@@ -135,6 +195,8 @@ namespace CUbaBuscaApp
 
 
         }
+
+     
 
     }
 }

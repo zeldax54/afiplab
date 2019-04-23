@@ -13,16 +13,18 @@ namespace CUbaBuscaApp
 {
     public partial class PreciosForm : RadForm
     {
-        public PreciosForm()
+        bool Isfromfact = false;
+        public Precio P=null;
+        public PreciosForm(bool pisfrofact=false)
         {
             InitializeComponent();
+            Isfromfact = pisfrofact;
         }
 
         private void PreciosForm_Load(object sender, EventArgs e)
         {
             Helper.SetTheme(Controls, this);
-            radGridView1.DataSource = DataContainer.Instance().dbManager.ServiciosList();
-         
+            radGridView1.DataSource = DataContainer.Instance().dbManager.ServiciosList();         
             Helper.InicializarGrid(radGridView1, new[] { "Id" });
        
          
@@ -34,9 +36,28 @@ namespace CUbaBuscaApp
 
             //Edit precios event
             radGridView2.CellEndEdit += EditarPrecio;
+            radGridView2.CellBeginEdit += RadGridView2_CellBeginEdit;
             radGridView2.UserAddedRow += AddPrecio;
             radGridView2.UserDeletingRow += DeletePrecio;
+            radGridView1.ClearSelection();
+            if (Isfromfact) {
+                Helper.InicializarGridReadObly(radGridView1, null);
+                Helper.InicializarGridReadObly(radGridView2, null);
+            }
+            
+        }
 
+        private void RadGridView2_CellBeginEdit(object sender, GridViewCellCancelEventArgs e)
+        {
+            if (e.Column.Name.ToLower().Contains("iva"))
+            {
+                var ivaform = new IvaEditorForm();
+                ivaform.ShowDialog();
+                var imp = ivaform.IvaValue;
+                var id = ivaform.Ivaid;
+                e.Row.Cells[e.ColumnIndex].Value = imp;
+                e.Row.Cells[e.ColumnIndex-1].Value = id;
+            }
         }
 
         private void DeletePrecio(object sender, GridViewRowCancelEventArgs e)
@@ -61,22 +82,53 @@ namespace CUbaBuscaApp
 
         private void EditarPrecio(object sender, GridViewCellEventArgs e)
         {
-            if (e.Row.DataBoundItem != null)
-                MessageManager.SowMessage(DataContainer.Instance().dbManager.EditarPrecio((Precio)e.Row.DataBoundItem), ThemeName);
+            if (e.Row.DataBoundItem != null) {
+                var precio = (Precio)e.Row.DataBoundItem;                   
+                DataContainer.Instance().dbManager.EditarPrecio(precio);
+            }
+              
         }
 
         private void RadGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            var s = radGridView1.SelectedRows[0].DataBoundItem as Servicio;
-            radGridView2.DataSource = DataContainer.Instance().dbManager.PreciosListByService(s.Id);
-            Helper.InicializarGrid(radGridView2, new[] { "Id", "ServicioId" });
+            if (radGridView1.SelectedRows.Count() > 0) {
+                var s = radGridView1.SelectedRows[0].DataBoundItem as Servicio;
+                radGridView2.DataSource = DataContainer.Instance().dbManager.PreciosListByService(s.Id);
+                Helper.InicializarGrid(radGridView2, new[] { "Id", "ServicioId", "ivaId" });
+                if (Isfromfact)
+                    radGridView2.CellDoubleClick += RadGridView2_CellDoubleClick;
+            }           
 
         }
 
+        private void RadGridView2_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            P = (Precio)e.Row.DataBoundItem;
+            this.Close();           
+        }
+
+       
+
+        //private void RadGridView2_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Right)
+        //    {
+        //        ContextMenu m = new ContextMenu();
+        //        MenuItem menuItem = new MenuItem("Agregar precio");
+        //        menuItem.Click += MenuItem_Click;
+        //        m.MenuItems.Add(menuItem);
+        //        m.Show(radGridView2, e.Location);
+        //    }
+        //}
+
+      
+
+        
+        
         private void PreciosForm_SizeChanged(object sender, EventArgs e)
         {
-            radGridView1.Width = this.Width / 2;
-            radGridView2.Width = this.Width / 2;
+            radGridView1.Width = (int)(this.Width * 0.3);
+            radGridView2.Width = (int)(this.Width * 0.7);
         }
 
        

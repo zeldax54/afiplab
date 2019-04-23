@@ -1,6 +1,6 @@
 ﻿namespace CUbaBuscaApp
 {
-    partial class PreciosForm
+    partial class IvaEditorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,59 +29,40 @@
         private void InitializeComponent()
         {
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
-            this.radGridView2 = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radGridView1
             // 
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGridView1.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
             this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(359, 426);
+            this.radGridView1.Size = new System.Drawing.Size(386, 280);
             this.radGridView1.TabIndex = 0;
+            this.radGridView1.Click += new System.EventHandler(this.radGridView1_Click);
             // 
-            // radGridView2
-            // 
-            this.radGridView2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radGridView2.Location = new System.Drawing.Point(365, 0);
-            // 
-            // 
-            // 
-            this.radGridView2.MasterTemplate.ViewDefinition = tableViewDefinition2;
-            this.radGridView2.Name = "radGridView2";
-            this.radGridView2.Size = new System.Drawing.Size(533, 426);
-            this.radGridView2.TabIndex = 0;
-            // 
-            // PreciosForm
+            // IvaEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 426);
-            this.Controls.Add(this.radGridView2);
+            this.ClientSize = new System.Drawing.Size(386, 280);
             this.Controls.Add(this.radGridView1);
-            this.Name = "PreciosForm";
+            this.Name = "IvaEditorForm";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "PreciosForm";
-            this.ThemeName = "VisualStudio2012Dark";
-            this.Load += new System.EventHandler(this.PreciosForm_Load);
+            this.Text = "IvaEditorForm";
+            this.Load += new System.EventHandler(this.IvaEditorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -90,6 +71,5 @@
         #endregion
 
         private Telerik.WinControls.UI.RadGridView radGridView1;
-        private Telerik.WinControls.UI.RadGridView radGridView2;
     }
 }

@@ -18,16 +18,66 @@ namespace CUbaBuscaApp
         {
             using (SQLiteConnection db = new SQLiteConnection(_path))
             {
+                db.CreateTable<CbteTipo>();
+                db.CreateTable<Clientes>();
+                db.CreateTable<ConceptoTipo>();
                 db.CreateTable<Configuraciones>();
+                db.CreateTable<DocTipo>();
                 db.CreateTable<EstadoFactura>();
                 db.CreateTable<Factura>();
+                db.CreateTable<FacturaDetalles>();
+                db.CreateTable<Inversocomprob>();
+                db.CreateTable<IvaTipo>();
                 db.CreateTable<Logininfo>();
+                db.CreateTable<Moneda>();
                 db.CreateTable<Precio>();
+                db.CreateTable<PtoVenta>();
                 db.CreateTable<Servicio>();
                 db.CreateTable<usuario>();
             }
         }
     }
+    public partial class CbteTipo
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 Id { get; set; }
+        
+        public String Desc { get; set; }
+        
+        public String FchDesde { get; set; }
+        
+        public String FchHasta { get; set; }
+        
+    }
+    
+    public partial class Clientes
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 id { get; set; }
+        
+        public String Nombre { get; set; }
+        
+        public String idtipoDoc { get; set; }
+        
+        public String conceptiva { get; set; }
+        
+        public String nrodoc { get; set; }
+        
+    }
+    
+    public partial class ConceptoTipo
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 Id { get; set; }
+        
+        public String Desc { get; set; }
+        
+        public String FchDesde { get; set; }
+        
+        public String FchHasta { get; set; }
+        
+    }
+    
     public partial class Configuraciones
     {
         [PrimaryKey, AutoIncrement]
@@ -40,6 +90,19 @@ namespace CUbaBuscaApp
         public String valor { get; set; }
         
         public String descripcion { get; set; }
+        
+    }
+    
+    public partial class DocTipo
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 Id { get; set; }
+        
+        public String Desc { get; set; }
+        
+        public String FchDesde { get; set; }
+        
+        public String FchHasta { get; set; }
         
     }
     
@@ -62,28 +125,95 @@ namespace CUbaBuscaApp
         public DateTime fechacreacion { get; set; }
         
         [NotNull]
-        public Int64 servicioId { get; set; }
-        
-        [NotNull]
-        public Double cantidad { get; set; }
-        
-        [NotNull]
-        public Double precio { get; set; }
-        
-        [NotNull]
         public Double total { get; set; }
         
-        [NotNull]
         public String nombrecliente { get; set; }
         
         [NotNull]
         public String letrafact { get; set; }
         
         [NotNull]
-        public Int64 precioId { get; set; }
+        public Int64 estadoId { get; set; }
         
         [NotNull]
-        public Int64 estadoId { get; set; }
+        public String monedaId { get; set; }
+        
+        public String monedadesc { get; set; }
+        
+        public Int64? numeroFact { get; set; }
+        
+        public Int64? conceptoId { get; set; }
+        
+        public Int64? clientdId { get; set; }
+        
+        public Int64? cbteId { get; set; }
+        
+        public String estadoEnvioAfiperror { get; set; }
+        
+        public String cae { get; set; }
+        
+        public Double? noGravado { get; set; }
+        
+        public String estadodesc { get; set; }
+        
+        public Int64? ptovta { get; set; }
+        
+        public Int64? originalidfact { get; set; }
+        
+    }
+    
+    public partial class FacturaDetalles
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 id { get; set; }
+        
+        public Int64? precioId { get; set; }
+        
+        public Double? precio { get; set; }
+        
+        public Int64? cantidad { get; set; }
+        
+        public Int64? impuestoId { get; set; }
+        
+        public Double? impuestovalor { get; set; }
+        
+        public Double? total { get; set; }
+        
+        public String monedaId { get; set; }
+        
+        public Int64? facturaId { get; set; }
+        
+        public String monedadesc { get; set; }
+        
+        public Double? impuestobase { get; set; }
+        
+        public String preciodesc { get; set; }
+        
+        public String serviciodesc { get; set; }
+        
+    }
+    
+    public partial class Inversocomprob
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 id { get; set; }
+        
+        public Int64? idcomprob { get; set; }
+        
+        public Int64? idinverso { get; set; }
+        
+    }
+    
+    public partial class IvaTipo
+    {
+        [PrimaryKey]
+        public String Id { get; set; }
+        
+        public String Desc { get; set; }
+        
+        public String FchDesde { get; set; }
+        
+        public String FchHasta { get; set; }
         
     }
     
@@ -109,6 +239,19 @@ namespace CUbaBuscaApp
         
     }
     
+    public partial class Moneda
+    {
+        [PrimaryKey]
+        public String Id { get; set; }
+        
+        public String Desc { get; set; }
+        
+        public String FchDesde { get; set; }
+        
+        public String FchHasta { get; set; }
+        
+    }
+    
     public partial class Precio
     {
         [PrimaryKey, AutoIncrement]
@@ -127,6 +270,22 @@ namespace CUbaBuscaApp
         public DateTime vigenciaHasta { get; set; }
         
         public String descripcion { get; set; }
+        
+        public Int64? ivaId { get; set; }
+        
+        public Double? ivamonto { get; set; }
+        
+    }
+    
+    public partial class PtoVenta
+    {
+        public Int64? Nro { get; set; }
+        
+        public String EmisionTipo { get; set; }
+        
+        public String Bloqueado { get; set; }
+        
+        public String FchBaja { get; set; }
         
     }
     

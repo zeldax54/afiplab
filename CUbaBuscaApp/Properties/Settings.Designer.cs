@@ -32,5 +32,15 @@ namespace CUbaBuscaApp.Properties {
                 return ((string)(this["CUbaBuscaApp_Wsaa_LoginCMSService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://wswhomo.afip.gov.ar/wsfev1/service.asmx")]
+        public string CUbaBuscaApp_afipService_Service {
+            get {
+                return ((string)(this["CUbaBuscaApp_afipService_Service"]));
+            }
+        }
     }
 }
