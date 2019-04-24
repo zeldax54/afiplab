@@ -40,15 +40,13 @@ namespace CUbaBuscaApp
 
             radLabel1.Text = "Facturas de hoy " + DateTime.Now.Date.ToString("dd-MM-yyyy");
             FormatoGrid();
-            Helper.InicializarGrid(radGridView1,new []{ "Id", "estadoId", "monedaId", "conceptoId", "clientdId", "cbteId", "originalidfact" });
-            radGridView1.AllowAddNewRow = false;
-            radGridView1.AllowEditRow = false;
+            
             this.SizeChanged += Satrt_SizeChanged;
             radGridView1.CellFormatting += RadGridView1_CellFormatting;
 
             radGridView1.CellDoubleClick += RadGridView1_CellDoubleClick;
+            WindowState = FormWindowState.Maximized;
 
-         
         }
 
         private void RadGridView1_CellDoubleClick(object sender, GridViewCellEventArgs e)
@@ -62,6 +60,7 @@ namespace CUbaBuscaApp
                 
             IEnumerable< FacturaDetalles> detalles = DataContainer.Instance().dbManager.DetallesFromFactura((int)f.Id);
             new FacturaForm(f, detalles).ShowDialog();
+            FormatoGrid();
         }
 
         private void RadGridView1_CellFormatting(object sender, CellFormattingEventArgs e)
@@ -71,14 +70,14 @@ namespace CUbaBuscaApp
                 e.CellElement.DrawFill = true;
                 switch (e.CellElement.Value.ToString()) {
 
-                    case "APROVADO":
+                    case "APROBADO":
                         e.CellElement.BackColor = Color.LawnGreen;
                         break;
                     case "RECHAZADO":
                         e.CellElement.BackColor = Color.OrangeRed;
                         break;
-                    case "ANULADA":
-                        e.CellElement.BackColor = Color.AliceBlue;
+                    case "ANULADO":
+                        e.CellElement.BackColor = Color.DeepSkyBlue;
                         break;
                     case "ERROR":
                         e.CellElement.BackColor = Color.Red;
@@ -90,7 +89,7 @@ namespace CUbaBuscaApp
         private void Satrt_SizeChanged(object sender, EventArgs e)
         {
             radGridView1.Width = (int)(this.Width * 0.9);
-            radGridView1.Height = (int)(this.Height * 0.5);
+            radGridView1.Height = (int)(this.Height * 0.8);
 
         }
 
@@ -247,9 +246,25 @@ namespace CUbaBuscaApp
         }
 
         private void FormatoGrid() {
-
+            radGridView1.DataSource = null;
+            radGridView1.SummaryRowsBottom.Clear();
+            radGridView1.SummaryRowsTop.Clear();
             radGridView1.DataSource = DataContainer.Instance().dbManager.FacturasbyFecha(DateTime.Now);
-           
+            Helper.InicializarGrid(radGridView1, new[] { "Id", "estadoId", "monedaId", "conceptoId", "clientdId", "cbteId", "originalidfact" });
+            radGridView1.AllowAddNewRow = false;
+            radGridView1.AllowEditRow = false;
+            foreach (var row in radGridView1.Rows) 
+                if (row.Cells["letrafact"].Value.ToString().Contains("Nota de Crédito") && row.Cells["estadoId"].Value.ToString()=="2")
+                    row.Cells["total"].Value = Helper.myparseFloat( row.Cells["total"].Value.ToString())  * -1;
+            
+
+            GridViewSummaryItem summaryItem = new GridViewSummaryItem("total", "Facturado: {0}", GridAggregateFunction.Sum);
+            
+            GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem();
+            summaryRowItem.Add(summaryItem);
+            this.radGridView1.SummaryRowsTop.Add(summaryRowItem);
+            this.radGridView1.SummaryRowsBottom.Add(summaryRowItem);
+
         }
     }
 }

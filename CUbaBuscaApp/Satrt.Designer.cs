@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
@@ -360,6 +360,7 @@
             // 
             // radMenu2
             // 
+            this.radMenu2.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radMenu2.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem1,
             this.radMenuItem2,
@@ -373,20 +374,22 @@
             // 
             // radGridView1
             // 
-            this.radGridView1.Location = new System.Drawing.Point(13, 56);
+            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.radGridView1.Location = new System.Drawing.Point(0, 70);
             // 
             // 
             // 
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition4;
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(683, 267);
+            this.radGridView1.Size = new System.Drawing.Size(722, 282);
             this.radGridView1.TabIndex = 1;
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(33, 32);
+            this.radLabel1.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.Location = new System.Drawing.Point(33, 43);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(55, 18);
+            this.radLabel1.Size = new System.Drawing.Size(89, 20);
             this.radLabel1.TabIndex = 2;
             this.radLabel1.Text = "radLabel1";
             // 

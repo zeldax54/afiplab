@@ -248,6 +248,7 @@ namespace CUbaBuscaApp
         {
             if (detallesGrid.RowCount > 0)
             {
+                Cursor = Cursors.WaitCursor;
                 DialogResult res = MessageManager.SowMessage("Se enviara esta factura a la Afip", ThemeName, false, true);
                 if (res == DialogResult.Yes)
                 {
@@ -277,10 +278,12 @@ namespace CUbaBuscaApp
 
                         WsManager.Facturar(f, detalles, cbte, ptovta, false);
                         MessageManager.SowMessage("Facturado con exito", ThemeName);
+                        Cursor = Cursors.Default;
                         Close();
                     }
                     catch (Exception ex)
                     {
+                        Cursor = Cursors.Default;
                         MessageManager.SowMessage(ex.Message, ThemeName);
                     }
 
@@ -296,7 +299,7 @@ namespace CUbaBuscaApp
         private void radMenuItem2_Click(object sender, EventArgs e)
         {
             if (_Factura.estadoId == 2) {
-
+                Cursor = Cursors.WaitCursor;
                 DialogResult res = MessageManager.SowMessage("Se enviara la anulación de esta factura a la Afip.", ThemeName, false, true);
                 if (res == DialogResult.Yes)
                 {
@@ -321,6 +324,7 @@ namespace CUbaBuscaApp
                     nC.conceptoId = _Factura.conceptoId;
                     nC.noGravado = _Factura.noGravado;
                     nC.nombrecliente = _Factura.nombrecliente;
+                    nC.NroRef = _Factura.NroRef;
                     var ncdetalles = _Detalles;
                     
 
@@ -338,17 +342,20 @@ namespace CUbaBuscaApp
                            
                             DataContainer.Instance().dbManager.WriteFactura(_Factura,_Detalles);
                             MessageManager.SowMessage("Anulada con exito", ThemeName);
+                            Cursor = Cursors.Default;
                             Close();
                         }
 
                         else {
                             MessageManager.SowMessage("Error anulando con exito. Consultar Log", ThemeName);
+                            Cursor = Cursors.Default;
                             Close();
                         }
                            
                     }
                     catch (Exception ex)
                     {
+                        Cursor = Cursors.Default;
                         MessageManager.SowMessage(ex.Message, ThemeName);
                     }
 

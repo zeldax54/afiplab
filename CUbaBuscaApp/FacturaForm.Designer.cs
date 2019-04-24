@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition11 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition12 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition13 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition14 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition15 = new Telerik.WinControls.UI.TableViewDefinition();
             this.tipofactcombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -119,7 +119,7 @@
             this.tipofactcombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.tipofactcombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.tipofactcombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.tipofactcombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.tipofactcombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition11;
             this.tipofactcombo.EditorControl.Name = "NestedRadGridView";
             this.tipofactcombo.EditorControl.ReadOnly = true;
             this.tipofactcombo.EditorControl.ShowGroupPanel = false;
@@ -170,7 +170,7 @@
             // 
             // ptoveta
             // 
-            this.ptoveta.Location = new System.Drawing.Point(103, 26);
+            this.ptoveta.Location = new System.Drawing.Point(141, 27);
             this.ptoveta.Name = "ptoveta";
             this.ptoveta.ReadOnly = true;
             this.ptoveta.Size = new System.Drawing.Size(100, 20);
@@ -202,7 +202,7 @@
             this.conceptocombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.conceptocombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.conceptocombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.conceptocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.conceptocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition12;
             this.conceptocombo.EditorControl.Name = "NestedRadGridView";
             this.conceptocombo.EditorControl.ReadOnly = true;
             this.conceptocombo.EditorControl.ShowGroupPanel = false;
@@ -233,7 +233,7 @@
             this.estadoCombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.estadoCombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.estadoCombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.estadoCombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.estadoCombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition13;
             this.estadoCombo.EditorControl.Name = "NestedRadGridView";
             this.estadoCombo.EditorControl.ReadOnly = true;
             this.estadoCombo.EditorControl.ShowGroupPanel = false;
@@ -280,7 +280,7 @@
             this.monedacombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.monedacombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.monedacombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.monedacombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition4;
+            this.monedacombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition14;
             this.monedacombo.EditorControl.Name = "NestedRadGridView";
             this.monedacombo.EditorControl.ReadOnly = true;
             this.monedacombo.EditorControl.ShowGroupPanel = false;
@@ -317,7 +317,7 @@
             // 
             // caetextbox
             // 
-            this.caetextbox.Location = new System.Drawing.Point(108, 187);
+            this.caetextbox.Location = new System.Drawing.Point(130, 187);
             this.caetextbox.Name = "caetextbox";
             this.caetextbox.ReadOnly = true;
             this.caetextbox.Size = new System.Drawing.Size(220, 20);
@@ -341,7 +341,7 @@
             // 
             // numerofactura
             // 
-            this.numerofactura.Location = new System.Drawing.Point(108, 152);
+            this.numerofactura.Location = new System.Drawing.Point(130, 152);
             this.numerofactura.Name = "numerofactura";
             this.numerofactura.ReadOnly = true;
             this.numerofactura.Size = new System.Drawing.Size(161, 20);
@@ -349,7 +349,7 @@
             // 
             // nogravado
             // 
-            this.nogravado.Location = new System.Drawing.Point(108, 85);
+            this.nogravado.Location = new System.Drawing.Point(130, 85);
             this.nogravado.Name = "nogravado";
             this.nogravado.ReadOnly = true;
             this.nogravado.Size = new System.Drawing.Size(161, 20);
@@ -357,7 +357,7 @@
             // 
             // gravado
             // 
-            this.gravado.Location = new System.Drawing.Point(108, 59);
+            this.gravado.Location = new System.Drawing.Point(130, 59);
             this.gravado.Name = "gravado";
             this.gravado.ReadOnly = true;
             this.gravado.Size = new System.Drawing.Size(161, 20);
@@ -389,7 +389,7 @@
             // 
             // totalcimpuestos
             // 
-            this.totalcimpuestos.Location = new System.Drawing.Point(108, 33);
+            this.totalcimpuestos.Location = new System.Drawing.Point(130, 33);
             this.totalcimpuestos.Name = "totalcimpuestos";
             this.totalcimpuestos.ReadOnly = true;
             this.totalcimpuestos.Size = new System.Drawing.Size(161, 20);
@@ -397,7 +397,7 @@
             // 
             // total
             // 
-            this.total.Location = new System.Drawing.Point(108, 109);
+            this.total.Location = new System.Drawing.Point(130, 109);
             this.total.Name = "total";
             this.total.ReadOnly = true;
             this.total.Size = new System.Drawing.Size(161, 20);
@@ -417,7 +417,7 @@
             // 
             // 
             // 
-            this.detallesGrid.MasterTemplate.ViewDefinition = tableViewDefinition5;
+            this.detallesGrid.MasterTemplate.ViewDefinition = tableViewDefinition15;
             this.detallesGrid.Name = "detallesGrid";
             this.detallesGrid.Size = new System.Drawing.Size(823, 231);
             this.detallesGrid.TabIndex = 5;

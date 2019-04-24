@@ -159,6 +159,8 @@ namespace CUbaBuscaApp
                         factura.numeroFact = numeroComprobAutorizar;
                         factura.estadoId = 2;
                         factura.cae = response.FeDetResp[0].CAE;
+                        if (!isAulacion)
+                            factura.NroRef = numeroComprobAutorizar.ToString();
                     }
                     else {
                         string observaciones = "";

@@ -284,7 +284,7 @@ namespace CUbaBuscaApp
         public IEnumerable<Factura> FacturasbyFecha(DateTime fecha)
         {
             
-            return db.Table<Factura>().ToList().Where(a => a.fechacreacion.Date.Year == fecha.Date.Year).ToList();
+            return db.Table<Factura>().ToList().Where(a => a.fechacreacion.Date == fecha.Date).OrderByDescending(a=>a.fechacreacion).ToList();
         }
 
         public IEnumerable<FacturaDetalles> DetallesFromFactura(int idfactura)

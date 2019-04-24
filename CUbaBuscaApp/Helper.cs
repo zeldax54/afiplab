@@ -142,6 +142,7 @@ namespace CUbaBuscaApp
         {
             var effectiveTheme = String.Empty;
             formulario.Icon = Properties.Resources.Designcontest_Ecommerce_Business_Invoice;
+            string fontName = DataContainer.Instance().dbManager.ConfigByKey("fuente");
             switch (DataContainer.Instance().Themename.ToLower()) {
 
                 case "dark":
@@ -175,16 +176,44 @@ namespace CUbaBuscaApp
            
            formulario.ThemeName = effectiveTheme;
             foreach (Control c in controls)
-            {
+            {                
                 try
                 {
-                    
-                    (c as RadControl).ThemeName = effectiveTheme;
+                    string x = c.Name;
+                    (c as RadControl).ThemeName = effectiveTheme;                  
+                    (c as RadControl).Font = new System.Drawing.Font(fontName, (c as RadControl).Font.Size);
+                    foreach (var ch in GetAll(c, typeof(RadTextBox))) {
+                        (ch as RadControl).ThemeName = effectiveTheme;
+                        (ch as RadControl).Font = new System.Drawing.Font(fontName, (c as RadControl).Font.Size);
+                    }
+                    foreach (var ch in GetAll(c, typeof(RadLabel)))
+                    {
+                        (ch as RadControl).ThemeName = effectiveTheme;
+                        (ch as RadControl).Font = new System.Drawing.Font(fontName, (c as RadControl).Font.Size);
+                    }
+
+                    foreach (var ch in GetAll(c, typeof(RadMultiColumnComboBox)))
+                    {
+                        (ch as RadControl).ThemeName = effectiveTheme;
+                        (ch as RadControl).Font = new System.Drawing.Font(fontName, (c as RadControl).Font.Size);
+                    }
+
+
+
                 }
                 catch (Exception e) {
                     Logger.WriteLog("Error cambiando tema " + e.Message);
                 }     
             }              
+        }
+
+        public static IEnumerable<Control> GetAll(Control control, Type type)
+        {
+            var controls = control.Controls.Cast<Control>();
+
+            return controls.SelectMany(ctrl => GetAll(ctrl, type))
+                                      .Concat(controls)
+                                      .Where(c => c.GetType() == type);
         }
 
         private static void SaveThemeConfig(string val) {

@@ -160,6 +160,8 @@ namespace CUbaBuscaApp
         
         public Int64? originalidfact { get; set; }
         
+        public String NroRef { get; set; }
+        
     }
     
     public partial class FacturaDetalles
