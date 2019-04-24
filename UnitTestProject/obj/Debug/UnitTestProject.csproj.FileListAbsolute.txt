@@ -1,0 +1,95 @@
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\CUbaBuscaApp.exe
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLite-net.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\log4net.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\MailKit.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\MimeKit.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\CUbaBuscaApp.pdb
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\CUbaBuscaApp.exe.config
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLite-net.xml
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\log4net.xml
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\MailKit.xml
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\bin\Debug\MimeKit.xml
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\UnitTestProject\obj\Debug\UnitTestProject.pdb
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\obj\Debug\UnitTestProject.csprojAssemblyReference.cache
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\obj\Debug\UnitTestProject.csproj.CoreCompileInputs.cache
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\obj\Debug\UnitTestProject.pdb
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\x86\e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\x64\e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\CUbaBuscaApp.exe
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLite-net.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\log4net.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\Telerik.WinControls.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\CUbaBuscaApp.pdb
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\CUbaBuscaApp.exe.config
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\SQLite-net.xml
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\log4net.xml
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\obj\Debug\UnitTestProject.csproj.CopyComplete
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\UnitTestProject\bin\Debug\Telerik.WinControls.UI.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\x86\e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\x64\e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\CUbaBuscaApp.exe
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\SQLite-net.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.WinControls.UI.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Dark.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.WinControls.GridView.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\log4net.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.WinControls.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Light.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.WinControls.Themes.TelerikMetro.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.WinControls.Themes.TelerikMetroBlue.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\TelerikCommon.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\CUbaBuscaApp.pdb
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\CUbaBuscaApp.exe.config
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\SQLite-net.xml
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\log4net.xml
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\obj\Debug\UnitTestProject.csprojAssemblyReference.cache
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\obj\Debug\UnitTestProject.csproj.CoreCompileInputs.cache
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\obj\Debug\UnitTestProject.csproj.CopyComplete
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\obj\Debug\UnitTestProject.pdb

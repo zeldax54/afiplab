@@ -1,0 +1,94 @@
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\CUbaBuscaApp.exe.config
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\CUbaBuscaApp.exe
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\CUbaBuscaApp.pdb
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csprojResolveAssemblyReference.cache
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Form1.resources
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Properties.Resources.resources
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csproj.GenerateResource.Cache
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.exe
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.pdb
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\BouncyCastle.Crypto.dll
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\MailKit.dll
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\MimeKit.dll
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\MailKit.xml
+c:\users\hl\documents\visual studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\MimeKit.xml
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\x86\e_sqlite3.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\x64\e_sqlite3.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLite-net.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLite-net.xml
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\log4net.dll
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\log4net.xml
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csprojAssemblyReference.cache
+C:\Users\HL\Documents\Visual Studio 2017\Projects\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csproj.CoreCompileInputs.cache
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csprojAssemblyReference.cache
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Properties.Resources.resources
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Satrt.resources
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csproj.GenerateResource.cache
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.exe.licenses
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csproj.CoreCompileInputs.cache
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.pdb
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\x86\e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\x64\e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\CUbaBuscaApp.exe.config
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\CUbaBuscaApp.exe
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\CUbaBuscaApp.pdb
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\log4net.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\MailKit.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\MimeKit.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLite-net.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\Telerik.WinControls.dll
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\log4net.xml
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\MailKit.xml
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\MimeKit.xml
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\SQLite-net.xml
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csproj.CopyComplete
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.exe
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Configuracion.resources
+C:\Users\zelda_b48pnza\source\repos\CUbaBuscaApp\CUbaBuscaApp\bin\Debug\Telerik.WinControls.UI.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\x86\e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\x64\e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\CUbaBuscaApp.exe.config
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\CUbaBuscaApp.exe
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\CUbaBuscaApp.pdb
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\log4net.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\MailKit.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\MimeKit.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\SQLite-net.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\Telerik.WinControls.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\Telerik.WinControls.GridView.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\Telerik.WinControls.Themes.TelerikMetro.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\Telerik.WinControls.Themes.TelerikMetroBlue.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Dark.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\Telerik.WinControls.Themes.VisualStudio2012Light.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\Telerik.WinControls.UI.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\TelerikCommon.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\log4net.xml
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\MailKit.xml
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\MimeKit.xml
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\bin\Debug\SQLite-net.xml
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Configuracion.resources
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.FacturaForm.resources
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.PreciosForm.resources
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Properties.Resources.resources
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Satrt.resources
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.ServiociosForm.resources
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csproj.GenerateResource.cache
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.exe.licenses
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csproj.CoreCompileInputs.cache
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csproj.CopyComplete
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.exe
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.pdb
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csprojAssemblyReference.cache
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Homologaciones.resources
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.IvaEditorForm.resources
