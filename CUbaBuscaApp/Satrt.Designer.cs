@@ -69,12 +69,14 @@
             this.radMenu2 = new Telerik.WinControls.UI.RadMenu();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem1.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem2.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,6 +135,7 @@
             // 
             this.radMenuItem14.Name = "radMenuItem14";
             this.radMenuItem14.Text = "Descargar";
+            this.radMenuItem14.Click += new System.EventHandler(this.radMenuItem14_Click_1);
             // 
             // radMenuItem15
             // 
@@ -386,18 +389,32 @@
             // 
             // radLabel1
             // 
+            this.radLabel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel1.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(33, 43);
+            this.radLabel1.Location = new System.Drawing.Point(633, 22);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(89, 20);
             this.radLabel1.TabIndex = 2;
             this.radLabel1.Text = "radLabel1";
+            // 
+            // radDateTimePicker1
+            // 
+            this.radDateTimePicker1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.radDateTimePicker1.Location = new System.Drawing.Point(469, 22);
+            this.radDateTimePicker1.Name = "radDateTimePicker1";
+            this.radDateTimePicker1.Size = new System.Drawing.Size(164, 20);
+            this.radDateTimePicker1.TabIndex = 3;
+            this.radDateTimePicker1.TabStop = false;
+            this.radDateTimePicker1.Text = "sábado, 27 de abril de 2019";
+            this.radDateTimePicker1.Value = new System.DateTime(2019, 4, 27, 23, 16, 12, 354);
+            this.radDateTimePicker1.ValueChanged += new System.EventHandler(this.radDateTimePicker1_ValueChanged);
             // 
             // Satrt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 352);
+            this.Controls.Add(this.radDateTimePicker1);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.radMenu2);
@@ -415,6 +432,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -463,5 +481,6 @@
         private Telerik.WinControls.UI.RadMenuItem radMenuItem30;
         private Telerik.WinControls.UI.RadGridView radGridView1;
         private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker1;
     }
 }

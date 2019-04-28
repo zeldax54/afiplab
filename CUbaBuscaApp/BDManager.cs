@@ -146,28 +146,32 @@ namespace CUbaBuscaApp
         {
             return db.Table<Precio>().ToList();
         }
-        public List<Precio> PreciosListByService(long serviceId)
+        public List<Precio> PreciosListByService(long serviceId,DateTime t,bool callfromfact)
         {
+                if(callfromfact)
+                  return db.Table<Precio>().ToList().Where(p => p.ServicioId == serviceId && p.vigenciaHasta.Date >= t.Date).ToList();
             return db.Table<Precio>().Where(p => p.ServicioId == serviceId).ToList();
+
         }
 
 
-        public string EditarPrecio(Precio p) {
+        public object[] EditarPrecio(Precio p) {
             var infacturas = db.Table<FacturaDetalles>().Where(f => f.precioId == p.Id).Any();
             var originalprecio = db.Find<Precio>(a => a.Id == p.Id);
-            if (infacturas && p.precio!=originalprecio.precio) {
-                var precioN = new Precio()
-                {
-                    Id = p.Id,
-                    vigenciaDesde = p.vigenciaDesde,
-                    vigenciaHasta = p.vigenciaHasta
-                };
-
-                db.Update(precioN);
-                return "Este precio esta usado en algunas facturas no se puede editar su monto Vigencias actualizadas";
+            if (infacturas && p.precio!=originalprecio.precio) {                
+                return new object[]{ "Este precio esta usado en algunas facturas no se puede editar su monto Vigencias actualizadas" ,false, originalprecio } ;
             }
             db.Update(p);
-            return "Precio actualizado";
+            return  new object[] { "Precio actualizado",true};
+
+            //var precioN = new Precio()
+            //{
+            //    Id = p.Id,
+            //    vigenciaDesde = p.vigenciaDesde,
+            //    vigenciaHasta = p.vigenciaHasta
+            //};
+
+            //db.Update(precioN);
         }
 
         public string AddPrecio(Precio p) {

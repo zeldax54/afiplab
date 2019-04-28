@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition11 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition12 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition13 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition14 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition15 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition10 = new Telerik.WinControls.UI.TableViewDefinition();
             this.tipofactcombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
+            this.fecfacvDate = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.ptoveta = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -58,15 +60,15 @@
             this.total = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.detallesGrid = new Telerik.WinControls.UI.RadGridView();
-            this.radDropDownButton1 = new Telerik.WinControls.UI.RadDropDownButton();
-            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fecfacvDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptoveta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -97,7 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesGrid.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +121,7 @@
             this.tipofactcombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.tipofactcombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.tipofactcombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.tipofactcombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition11;
+            this.tipofactcombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition6;
             this.tipofactcombo.EditorControl.Name = "NestedRadGridView";
             this.tipofactcombo.EditorControl.ReadOnly = true;
             this.tipofactcombo.EditorControl.ShowGroupPanel = false;
@@ -143,6 +145,8 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.radLabel12);
+            this.radGroupBox1.Controls.Add(this.fecfacvDate);
             this.radGroupBox1.Controls.Add(this.radLabel10);
             this.radGroupBox1.Controls.Add(this.ptoveta);
             this.radGroupBox1.Controls.Add(this.radLabel1);
@@ -156,9 +160,27 @@
             this.radGroupBox1.HeaderText = "Datos Base";
             this.radGroupBox1.Location = new System.Drawing.Point(12, 12);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(347, 229);
+            this.radGroupBox1.Size = new System.Drawing.Size(417, 229);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "Datos Base";
+            // 
+            // radLabel12
+            // 
+            this.radLabel12.Location = new System.Drawing.Point(207, 110);
+            this.radLabel12.Name = "radLabel12";
+            this.radLabel12.Size = new System.Drawing.Size(88, 18);
+            this.radLabel12.TabIndex = 4;
+            this.radLabel12.Text = "Fecha de factura";
+            // 
+            // fecfacvDate
+            // 
+            this.fecfacvDate.Location = new System.Drawing.Point(207, 132);
+            this.fecfacvDate.Name = "fecfacvDate";
+            this.fecfacvDate.Size = new System.Drawing.Size(195, 20);
+            this.fecfacvDate.TabIndex = 7;
+            this.fecfacvDate.TabStop = false;
+            this.fecfacvDate.Text = "domingo, 28 de abril de 2019";
+            this.fecfacvDate.Value = new System.DateTime(2019, 4, 28, 12, 46, 20, 787);
             // 
             // radLabel10
             // 
@@ -202,7 +224,7 @@
             this.conceptocombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.conceptocombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.conceptocombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.conceptocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition12;
+            this.conceptocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition7;
             this.conceptocombo.EditorControl.Name = "NestedRadGridView";
             this.conceptocombo.EditorControl.ReadOnly = true;
             this.conceptocombo.EditorControl.ShowGroupPanel = false;
@@ -233,7 +255,7 @@
             this.estadoCombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.estadoCombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.estadoCombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.estadoCombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition13;
+            this.estadoCombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition8;
             this.estadoCombo.EditorControl.Name = "NestedRadGridView";
             this.estadoCombo.EditorControl.ReadOnly = true;
             this.estadoCombo.EditorControl.ShowGroupPanel = false;
@@ -280,7 +302,7 @@
             this.monedacombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.monedacombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.monedacombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.monedacombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition14;
+            this.monedacombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition9;
             this.monedacombo.EditorControl.Name = "NestedRadGridView";
             this.monedacombo.EditorControl.ReadOnly = true;
             this.monedacombo.EditorControl.ShowGroupPanel = false;
@@ -309,7 +331,7 @@
             this.radGroupBox2.Controls.Add(this.total);
             this.radGroupBox2.Controls.Add(this.radLabel4);
             this.radGroupBox2.HeaderText = "Totales";
-            this.radGroupBox2.Location = new System.Drawing.Point(389, 13);
+            this.radGroupBox2.Location = new System.Drawing.Point(473, 13);
             this.radGroupBox2.Name = "radGroupBox2";
             this.radGroupBox2.Size = new System.Drawing.Size(362, 228);
             this.radGroupBox2.TabIndex = 4;
@@ -417,40 +439,26 @@
             // 
             // 
             // 
-            this.detallesGrid.MasterTemplate.ViewDefinition = tableViewDefinition15;
+            this.detallesGrid.MasterTemplate.ViewDefinition = tableViewDefinition10;
             this.detallesGrid.Name = "detallesGrid";
             this.detallesGrid.Size = new System.Drawing.Size(823, 231);
             this.detallesGrid.TabIndex = 5;
             // 
-            // radDropDownButton1
+            // radButton1
             // 
-            this.radDropDownButton1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem1,
-            this.radMenuItem2});
-            this.radDropDownButton1.Location = new System.Drawing.Point(12, 247);
-            this.radDropDownButton1.Name = "radDropDownButton1";
-            this.radDropDownButton1.Size = new System.Drawing.Size(140, 24);
-            this.radDropDownButton1.TabIndex = 8;
-            this.radDropDownButton1.Text = "Operaciones";
-            // 
-            // radMenuItem1
-            // 
-            this.radMenuItem1.Name = "radMenuItem1";
-            this.radMenuItem1.Text = "Facturar";
-            this.radMenuItem1.Click += new System.EventHandler(this.radMenuItem1_Click);
-            // 
-            // radMenuItem2
-            // 
-            this.radMenuItem2.Name = "radMenuItem2";
-            this.radMenuItem2.Text = "Anular Factura";
-            this.radMenuItem2.Click += new System.EventHandler(this.radMenuItem2_Click);
+            this.radButton1.Location = new System.Drawing.Point(15, 247);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(110, 24);
+            this.radButton1.TabIndex = 6;
+            this.radButton1.Text = "radButton1";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // FacturaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 570);
-            this.Controls.Add(this.radDropDownButton1);
+            this.ClientSize = new System.Drawing.Size(860, 570);
+            this.Controls.Add(this.radButton1);
             this.Controls.Add(this.detallesGrid);
             this.Controls.Add(this.radGroupBox2);
             this.Controls.Add(this.radGroupBox1);
@@ -469,6 +477,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fecfacvDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptoveta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
@@ -500,7 +510,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesGrid.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -532,8 +542,8 @@
         private Telerik.WinControls.UI.RadTextBox ptoveta;
         private Telerik.WinControls.UI.RadTextBox caetextbox;
         private Telerik.WinControls.UI.RadLabel radLabel11;
-        private Telerik.WinControls.UI.RadDropDownButton radDropDownButton1;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
+        private Telerik.WinControls.UI.RadLabel radLabel12;
+        private Telerik.WinControls.UI.RadDateTimePicker fecfacvDate;
+        private Telerik.WinControls.UI.RadButton radButton1;
     }
 }

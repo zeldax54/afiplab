@@ -18,6 +18,7 @@ namespace CUbaBuscaApp
             InitializeComponent();
         }
 
+        private DateTime _lastSearchedDate;
         private void Satrt_Load(object sender, EventArgs e)
         {
             log4net.Config.XmlConfigurator.Configure(); 
@@ -39,7 +40,7 @@ namespace CUbaBuscaApp
             radMenuComboItem2.ComboBoxElement.SelectedIndexChanged += ComboBoxElement_SelectedIndexChanged;
 
             radLabel1.Text = "Facturas de hoy " + DateTime.Now.Date.ToString("dd-MM-yyyy");
-            FormatoGrid();
+            FormatoGrid(DateTime.Now);
             
             this.SizeChanged += Satrt_SizeChanged;
             radGridView1.CellFormatting += RadGridView1_CellFormatting;
@@ -53,14 +54,17 @@ namespace CUbaBuscaApp
         {
 
             Factura f = (Factura)e.Row.DataBoundItem;
-            if (f.estadoId == 3 || f.estadoId == 6 || f.estadoId==1) {
-                MessageManager.SowMessage("Comprobante rechazado o no emitido, se puede desechar.", ThemeName);
-                return;
-            }
+            if (f != null) {
+                if (f.estadoId == 3 || f.estadoId == 6 || f.estadoId == 1)
+                {
+                    MessageManager.SowMessage("Comprobante rechazado o no emitido, se puede desechar.", ThemeName);
+                    return;
+                }
+            }           
                 
             IEnumerable< FacturaDetalles> detalles = DataContainer.Instance().dbManager.DetallesFromFactura((int)f.Id);
             new FacturaForm(f, detalles).ShowDialog();
-            FormatoGrid();
+            FormatoGrid(radDateTimePicker1.Value);
         }
 
         private void RadGridView1_CellFormatting(object sender, CellFormattingEventArgs e)
@@ -131,7 +135,7 @@ namespace CUbaBuscaApp
 
         private void radMenuItem9_Click_1(object sender, EventArgs e)
         {
-            new PreciosForm().ShowDialog();
+            new PreciosForm(DateTime.Now).ShowDialog();
         }
 
 
@@ -142,9 +146,9 @@ namespace CUbaBuscaApp
            Cursor = Cursors.Default;
            DialogResult d= MessageManager.SowMessage("Monedas descargadas. Desea visualizarlas?",ThemeName,false,true);
            if (d == DialogResult.Yes) 
-                new Homologaciones(lista).ShowDialog();           
+                new Homologaciones(lista).ShowDialog();
 
-          
+            Cursor = Cursors.Default;
         }        
        
 
@@ -161,6 +165,7 @@ namespace CUbaBuscaApp
             DialogResult d = MessageManager.SowMessage("Ivas descargados. Desea visualizarlaos?", ThemeName, false, true);
             if (d == DialogResult.Yes)
                 new Homologaciones(lista).ShowDialog();
+            Cursor = Cursors.Default;
         }
 
         private void radMenuItem17_Click(object sender, EventArgs e)
@@ -241,30 +246,74 @@ namespace CUbaBuscaApp
         private void radMenuItem5_Click(object sender, EventArgs e)
         {
             new FacturaForm().ShowDialog();
-            FormatoGrid();
+            FormatoGrid(radDateTimePicker1.Value);
           
         }
 
-        private void FormatoGrid() {
+        private void FormatoGrid(DateTime t) {
             radGridView1.DataSource = null;
             radGridView1.SummaryRowsBottom.Clear();
             radGridView1.SummaryRowsTop.Clear();
-            radGridView1.DataSource = DataContainer.Instance().dbManager.FacturasbyFecha(DateTime.Now);
+            radGridView1.DataSource = DataContainer.Instance().dbManager.FacturasbyFecha(t);
             Helper.InicializarGrid(radGridView1, new[] { "Id", "estadoId", "monedaId", "conceptoId", "clientdId", "cbteId", "originalidfact" });
             radGridView1.AllowAddNewRow = false;
             radGridView1.AllowEditRow = false;
             foreach (var row in radGridView1.Rows) 
                 if (row.Cells["letrafact"].Value.ToString().Contains("Nota de Crédito") && row.Cells["estadoId"].Value.ToString()=="2")
                     row.Cells["total"].Value = Helper.myparseFloat( row.Cells["total"].Value.ToString())  * -1;
-            
 
-            GridViewSummaryItem summaryItem = new GridViewSummaryItem("total", "Facturado: {0}", GridAggregateFunction.Sum);
-            
-            GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem();
-            summaryRowItem.Add(summaryItem);
-            this.radGridView1.SummaryRowsTop.Add(summaryRowItem);
-            this.radGridView1.SummaryRowsBottom.Add(summaryRowItem);
+            if (radGridView1.Rows.Count > 0) {
+             
+                CustomSummaryItem summaryItem = new CustomSummaryItem("total", "Facturado: {0}",
+                    GridAggregateFunction.Sum);
+                GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem();
+                summaryRowItem.Add(summaryItem);
+                this.radGridView1.SummaryRowsTop.Add(summaryRowItem);
+                this.radGridView1.SummaryRowsBottom.Add(summaryRowItem);
+            }
+            radLabel1.Text = "Facturas de " + t.ToShortDateString();
+        }
 
+        private void radMenuItem14_Click_1(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            var lista = WsManager.MonedasHomolog();
+            Cursor = Cursors.Default;
+            DialogResult d = MessageManager.SowMessage("Tipos de documentos descargados. Desea visualizarlaos?", ThemeName, false, true);
+            if (d == DialogResult.Yes)
+                new Homologaciones(lista).ShowDialog();
+        }
+
+        private void radDateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            FormatoGrid(((RadDateTimePicker)sender).Value);
+        }
+
+        //private void RadGridView1_GroupSummaryEvaluate(object sender, GroupSummaryEvaluationEventArgs e)
+        //{
+        //    MasterGridViewTemplate t =(MasterGridViewTemplate) e.Parent;
+        //    string letra = t.CurrentRow.Cells["letrafact"].Value.ToString();
+        //    if (t.CurrentRow.Cells["estadoId"].Value.ToString() != "2" && t.CurrentRow.Cells["estadoId"].Value.ToString() != "5")
+        //        e.Value = 0;
+        //}
+    }
+
+    public class CustomSummaryItem : GridViewSummaryItem
+    {
+        public CustomSummaryItem(string name, string formatString, GridAggregateFunction aggregate)
+            : base(name, formatString, aggregate)
+        { }
+        public override object Evaluate(IHierarchicalRow row)
+        {
+            float lowFreightsCount = 0;
+            foreach (GridViewRowInfo childRow in row.ChildRows)
+            {
+                if (childRow.Cells["estadoId"].Value.ToString() == "2" || childRow.Cells["estadoId"].Value.ToString()=="5")
+                {
+                    lowFreightsCount += Helper.myparseFloat(childRow.Cells["total"].Value.ToString());
+                }
+            }
+            return lowFreightsCount;
         }
     }
 }

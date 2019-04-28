@@ -55,6 +55,13 @@ namespace CUbaBuscaApp
             return puntos;
         }
 
+        //public static IEnumerable<dynamic> FormasPago()
+        //{
+        //    afipService.Obs[] puntos = service.pa(getTicket()).ResultGet;
+        //    if (puntos != null)
+        //        DataContainer.Instance().dbManager.GenericHomolog(puntos, typeof(afipService.DocTipo));
+        //    return puntos;
+        //}
 
 
         public static Factura Facturar(Factura factura,IEnumerable<FacturaDetalles> detalles,
@@ -64,7 +71,7 @@ namespace CUbaBuscaApp
             {
                 afipService.FECAECabRequest feCabReq = new afipService.FECAECabRequest()
                 {
-                    CantReg = detalles.Count(),
+                    CantReg = 1,// todo se envia uno porque es un comprobante detalles.Count(),
                     CbteTipo = tipofacT.Id,
                     PtoVta = pPtoVta
                 };
@@ -97,12 +104,12 @@ namespace CUbaBuscaApp
                 {
                     CbteDesde = numeroComprobAutorizar,
                     CbteHasta = numeroComprobAutorizar,
-                    CbteFch = factura.fechacreacion.ToString("yyyyMMdd"),                    
+                    CbteFch = factura.fechafacturacion.ToString("yyyyMMdd"),                    
                     Concepto = (int)factura.conceptoId,                  
-                    FchServDesde = DateTime.Now.ToString("yyyyMMdd"),
-                    FchServHasta = DateTime.Now.ToString("yyyyMMdd"),
-                    FchVtoPago = DateTime.Now.ToString("yyyyMMdd"),
-                    DocNro=0,
+                    FchServDesde = factura.fechafacturacion.ToString("yyyyMMdd"),
+                    FchServHasta = factura.fechafacturacion.ToString("yyyyMMdd"),
+                    FchVtoPago = factura.fechafacturacion.ToString("yyyyMMdd"),
+                    DocNro =0,
                     DocTipo=99,
                     ImpIVA = totalIva,
                   
@@ -122,7 +129,7 @@ namespace CUbaBuscaApp
 
                     asociados.Add(new afipService.CbteAsoc()
                     {
-                        CbteFch = factura.fechacreacion.ToString("yyyyMMdd"),
+                        CbteFch = factura.fechafacturacion.ToString("yyyyMMdd"),
                         Cuit = getTicket().Cuit.ToString(),
                         Nro = nroanulado,
                         PtoVta = pPtoVta,

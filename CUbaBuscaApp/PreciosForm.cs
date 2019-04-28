@@ -15,9 +15,11 @@ namespace CUbaBuscaApp
     {
         bool Isfromfact = false;
         public Precio P=null;
-        public PreciosForm(bool pisfrofact=false)
+        public DateTime FechaVigencia;
+        public PreciosForm(DateTime fechaVigencia, bool pisfrofact=false)
         {
-            InitializeComponent();
+            InitializeComponent();           
+            FechaVigencia = fechaVigencia;
             Isfromfact = pisfrofact;
         }
 
@@ -83,8 +85,13 @@ namespace CUbaBuscaApp
         private void EditarPrecio(object sender, GridViewCellEventArgs e)
         {
             if (e.Row.DataBoundItem != null) {
-                var precio = (Precio)e.Row.DataBoundItem;                   
-                DataContainer.Instance().dbManager.EditarPrecio(precio);
+                var precio = (Precio)e.Row.DataBoundItem;
+                var ret = DataContainer.Instance().dbManager.EditarPrecio(precio);
+                if ((bool)ret[1] == false) {
+                    e.Row.Cells["precio"].Value = ((Precio)ret[2]).precio;
+                }
+                MessageManager.SowMessage(ret [0].ToString(),ThemeName);
+             
             }
               
         }
@@ -93,7 +100,7 @@ namespace CUbaBuscaApp
         {
             if (radGridView1.SelectedRows.Count() > 0) {
                 var s = radGridView1.SelectedRows[0].DataBoundItem as Servicio;
-                radGridView2.DataSource = DataContainer.Instance().dbManager.PreciosListByService(s.Id);
+                radGridView2.DataSource = DataContainer.Instance().dbManager.PreciosListByService(s.Id,FechaVigencia,Isfromfact);
                 Helper.InicializarGrid(radGridView2, new[] { "Id", "ServicioId", "ivaId" });
                 if (Isfromfact)
                     radGridView2.CellDoubleClick += RadGridView2_CellDoubleClick;

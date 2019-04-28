@@ -112,6 +112,12 @@
     </Compile>
     <Compile Include="DataAccess.cs" />
     <Compile Include="DataCointainer.cs" />
+    <Compile Include="FacturacionRapida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturacionRapida.Designer.cs">
+      <DependentUpon>FacturacionRapida.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     <Compile Include="WsManager.cs" />
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturacionRapida.resx">
+      <DependentUpon>FacturacionRapida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>

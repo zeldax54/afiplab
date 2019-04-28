@@ -111,6 +111,7 @@ namespace CUbaBuscaApp
 
         public static void OcularColumsCombo(RadMultiColumnComboBox [] combo,IEnumerable<string> hide)
         {
+            
             foreach (var c in combo)                
                 foreach (var col in c.Columns)
                     foreach (var h in hide)
@@ -133,7 +134,12 @@ namespace CUbaBuscaApp
              str = str.Replace("%", "");
             NumberFormatInfo formatInfo = new NumberFormatInfo();
             formatInfo.CurrencyDecimalSeparator = ".";
-            return float.Parse(str, NumberStyles.AllowDecimalPoint, formatInfo);
+            int isneg = 1;
+            if (str.Contains("-")) {
+                str = str.Replace("-", "");
+                isneg = -1;
+            }
+            return float.Parse(str, NumberStyles.AllowDecimalPoint, formatInfo) * isneg;
 
         }
 
@@ -223,6 +229,11 @@ namespace CUbaBuscaApp
             DataContainer.Instance().dbManager.ManageConfig(conf);
 
 
+        }
+
+        public static bool ReadOnlyCmprob(Factura f) {
+
+            return f.cbteId == 13 || f.estadodesc.ToLower().Contains("anulad");
         }
 
      

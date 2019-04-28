@@ -25,6 +25,7 @@ namespace CUbaBuscaApp
                 db.CreateTable<DocTipo>();
                 db.CreateTable<EstadoFactura>();
                 db.CreateTable<Factura>();
+                db.CreateTable<facturacionRapidaconf>();
                 db.CreateTable<FacturaDetalles>();
                 db.CreateTable<Inversocomprob>();
                 db.CreateTable<IvaTipo>();
@@ -161,6 +162,27 @@ namespace CUbaBuscaApp
         public Int64? originalidfact { get; set; }
         
         public String NroRef { get; set; }
+        
+        public DateTime? fechafacturacion { get; set; }
+        
+    }
+    
+    public partial class facturacionRapidaconf
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 id { get; set; }
+        
+        public Int64? servicioId { get; set; }
+        
+        public Int64? percioId { get; set; }
+        
+        public String preciodesc { get; set; }
+        
+        public Int64? cantidad { get; set; }
+        
+        public Double? total { get; set; }
+        
+        public String frdesc { get; set; }
         
     }
     
