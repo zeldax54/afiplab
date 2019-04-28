@@ -289,6 +289,11 @@ namespace CUbaBuscaApp
             FormatoGrid(((RadDateTimePicker)sender).Value);
         }
 
+        private void radMenuItem32_Click(object sender, EventArgs e)
+        {
+            new FacturacionRapida().ShowDialog();
+        }
+
         //private void RadGridView1_GroupSummaryEvaluate(object sender, GroupSummaryEvaluationEventArgs e)
         //{
         //    MasterGridViewTemplate t =(MasterGridViewTemplate) e.Parent;

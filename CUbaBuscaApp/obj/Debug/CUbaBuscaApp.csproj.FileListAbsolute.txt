@@ -92,3 +92,4 @@ C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.pdb
 C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csprojAssemblyReference.cache
 C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Homologaciones.resources
 C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.IvaEditorForm.resources
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.FacturacionRapida.resources

@@ -163,7 +163,8 @@ namespace CUbaBuscaApp
         
         public String NroRef { get; set; }
         
-        public DateTime? fechafacturacion { get; set; }
+        [NotNull]
+        public DateTime fechafacturacion { get; set; }
         
     }
     
@@ -183,6 +184,14 @@ namespace CUbaBuscaApp
         public Double? total { get; set; }
         
         public String frdesc { get; set; }
+        
+        public Double? porciva { get; set; }
+        
+        public Double? ivavalue { get; set; }
+        
+        public Int64? ivaId { get; set; }
+        
+        public Double? precio { get; set; }
         
     }
     

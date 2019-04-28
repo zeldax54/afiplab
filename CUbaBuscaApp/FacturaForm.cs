@@ -36,9 +36,7 @@ namespace CUbaBuscaApp
             estadoCombo.DataSource= DataContainer.Instance().dbManager.GenericTable("estado");
             conceptocombo.DataSource = DataContainer.Instance().dbManager.GenericTable("conceptos");
 
-
             //ocular cols
-
             Helper.OcularColumsCombo(new[] { tipofactcombo,
                 monedacombo, estadoCombo,
                 conceptocombo }, new []{ "Id","id", "FchDesde", "FchHasta" });
@@ -55,12 +53,7 @@ namespace CUbaBuscaApp
             detallesGrid.UserAddedRow += DetallesGrid_UserAddedRow;
             foreach (var c in detallesGrid.Columns)
                 if (c.Name != "cantidad")
-                    c.ReadOnly = true;
-           
-           
-
-            
-           
+                    c.ReadOnly = true;        
 
            var ptoveta = DataContainer.Instance().dbManager.ConfigByKey("ptovta");
             this.ptoveta.Text = ptoveta;

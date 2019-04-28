@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
@@ -70,6 +70,8 @@
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.radMenuItem31 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem32 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem1.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuComboItem2.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu2)).BeginInit();
@@ -86,7 +88,8 @@
             this.radMenuItem3,
             this.radMenuItem7,
             this.radMenuItem9,
-            this.radMenuItem12});
+            this.radMenuItem12,
+            this.radMenuItem31});
             this.radMenuItem2.Name = "radMenuItem2";
             this.radMenuItem2.Text = "Datos     ";
             // 
@@ -382,7 +385,7 @@
             // 
             // 
             // 
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition4;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.Size = new System.Drawing.Size(722, 282);
             this.radGridView1.TabIndex = 1;
@@ -408,6 +411,19 @@
             this.radDateTimePicker1.Text = "sábado, 27 de abril de 2019";
             this.radDateTimePicker1.Value = new System.DateTime(2019, 4, 27, 23, 16, 12, 354);
             this.radDateTimePicker1.ValueChanged += new System.EventHandler(this.radDateTimePicker1_ValueChanged);
+            // 
+            // radMenuItem31
+            // 
+            this.radMenuItem31.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem32});
+            this.radMenuItem31.Name = "radMenuItem31";
+            this.radMenuItem31.Text = "Facturacion Rápida";
+            // 
+            // radMenuItem32
+            // 
+            this.radMenuItem32.Name = "radMenuItem32";
+            this.radMenuItem32.Text = "Configuración";
+            this.radMenuItem32.Click += new System.EventHandler(this.radMenuItem32_Click);
             // 
             // Satrt
             // 
@@ -482,5 +498,7 @@
         private Telerik.WinControls.UI.RadGridView radGridView1;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem31;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem32;
     }
 }

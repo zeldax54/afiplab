@@ -322,5 +322,34 @@ namespace CUbaBuscaApp
             return (int) db.Table<Inversocomprob>().Where(a => a.idcomprob
             == idcomprob).First().idinverso;
         }
+
+        //Facturacion Rapida
+        public List<facturacionRapidaconf> ListaFacR() {
+
+            return db.Table<facturacionRapidaconf>().ToList();
+        }
+
+        public long AddCOnfRapida(facturacionRapidaconf r) {
+            try
+            {
+                db.Insert(r);
+                return SQLite3.LastInsertRowid(db.Handle);
+            }
+            catch (Exception e) {
+                throw new Exception(e.Message);
+            }           
+        }
+
+        public void EditCOnfRapida(facturacionRapidaconf r)
+        {
+            try
+            {
+                db.Update(r);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }
