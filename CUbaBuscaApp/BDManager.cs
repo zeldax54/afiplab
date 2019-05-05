@@ -248,15 +248,7 @@ namespace CUbaBuscaApp
         }
 
 
-        public Clientes GetCliente(long clienteId)
-        {
-          return db.Find<Clientes>(clienteId);
-        }
-        public long getNroDoccliente(long clienteId)
-        {
-            return db.Find<Clientes>(clienteId) == null ? 0 : long.Parse(db.Find<Clientes>(clienteId).nrodoc);
-        }
-
+   
 
 
         //WriteFacturas
@@ -289,6 +281,11 @@ namespace CUbaBuscaApp
         {
             
             return db.Table<Factura>().ToList().Where(a => a.fechacreacion.Date == fecha.Date).OrderByDescending(a=>a.fechacreacion).ToList();
+        }
+
+        public Factura FacturaFromId(int idfactura)
+        {
+            return db.Table<Factura>().First(a => a.Id == idfactura);
         }
 
         public IEnumerable<FacturaDetalles> DetallesFromFactura(int idfactura)
@@ -362,5 +359,21 @@ namespace CUbaBuscaApp
                 throw new Exception(e.Message);
             }
         }
+
+        /// <summary>
+        /// Listado de clientes
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Clientes> Clientes()
+        {
+            return db.Table<Clientes>().ToList();
+        }
+
+        public Clientes GetCliente(long clienteId)
+        {
+            return db.Find<Clientes>(clienteId);
+        }
+     
+
     }
 }

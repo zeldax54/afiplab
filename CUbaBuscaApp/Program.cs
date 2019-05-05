@@ -18,10 +18,16 @@ namespace CUbaBuscaApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             RadGridLocalizationProvider.CurrentProvider = new MyEnglishRadGridLocalizationProvider();
-            Application.Run(new Satrt());
-           
+            log4net.Config.XmlConfigurator.Configure();
+            Logger.WriteLog("Aplicacion iniciada");
+            BdManager bd = new BdManager();
+            DataContainer.Instance().dbManager = bd;
+            string tema = DataContainer.Instance().dbManager.ConfigByKey("tema");
+            DataContainer.Instance().Themename = tema;
+              Application.Run(new Satrt());
 
-            //Application.Run(new FacturaForm());
+
+          //  Application.Run(new PrinterForm());
 
         }
     }

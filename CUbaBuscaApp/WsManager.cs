@@ -56,6 +56,8 @@ namespace CUbaBuscaApp
             return puntos;
         }
 
+      
+
         //public static IEnumerable<dynamic> FormasPago()
         //{
         //    afipService.Obs[] puntos = service.pa(getTicket()).ResultGet;
@@ -144,8 +146,8 @@ namespace CUbaBuscaApp
                     detRequest.Iva = ivas.ToArray();
                 }
                 if (cliente != null) {
-                    detRequest.DocNro = long.Parse(factura.clientdId == null ? null : cliente.nrodoc);
-                    detRequest.DocTipo = int.Parse(factura.clientdId == null ? null : cliente.idtipoDoc);
+                    detRequest.DocNro = cliente.nrodoc;
+                    detRequest.DocTipo = (int)cliente.idtipoDoc;
                 }
 
                 detRequests.Add(detRequest);
@@ -226,7 +228,7 @@ namespace CUbaBuscaApp
         }
 
 
-        public static void GetFactura(Factura f)
+        public static FECompConsultaResponse GetFactura(Factura f)
         {
             FECompConsultaReq req=new FECompConsultaReq()
             {
@@ -234,7 +236,9 @@ namespace CUbaBuscaApp
                 CbteTipo = (int) f.cbteId,
                 PtoVta = (int)f.ptovta
             };
-           var resp=  service.FECompConsultar(GetTicket(), req);
+           return service.FECompConsultar(GetTicket(), req);
         }
+
+      
     }
 }

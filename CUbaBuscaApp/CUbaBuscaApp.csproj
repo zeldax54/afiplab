@@ -62,6 +62,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Services" />
@@ -74,6 +75,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=12.0.18.117, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=12.0.18.117, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls, Version=2018.1.116.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Telerik.WinControls\v4.0_2018.1.116.40__5bb2a467cbec794e\Telerik.WinControls.dll</HintPath>
@@ -130,6 +133,12 @@
     <Compile Include="FacturaForm.Designer.cs">
       <DependentUpon>FacturaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenericForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenericForm.Designer.cs">
+      <DependentUpon>GenericForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Homologaciones.cs">
       <SubType>Form</SubType>
@@ -154,9 +163,21 @@
     <Compile Include="PreciosForm.Designer.cs">
       <DependentUpon>PreciosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrinterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrinterForm.Designer.cs">
+      <DependentUpon>PrinterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporte.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Satrt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +214,9 @@
     <EmbeddedResource Include="FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenericForm.resx">
+      <DependentUpon>GenericForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homologaciones.resx">
       <DependentUpon>Homologaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PreciosForm.resx">
       <DependentUpon>PreciosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrinterForm.resx">
+      <DependentUpon>PrinterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -213,6 +240,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Satrt.resx">
       <DependentUpon>Satrt.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,37 +363,57 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\application_double.png" />
+    <None Include="Resources\application_double.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Document.png" />
+    <None Include="Resources\Document.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\msoffice_Footer1.png" />
+    <None Include="Resources\msoffice_Footer1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\file-explorer-icon.png" />
+    <None Include="Resources\file-explorer-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\new16.png" />
+    <None Include="Resources\new16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1664540.png" />
+    <None Include="Resources\1664540.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Designcontest-Ecommerce-Business-Invoice.ico" />
+    <None Include="Resources\Designcontest-Ecommerce-Business-Invoice.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\afipService\service.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\delete.ico" />
+    <None Include="Resources\delete.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\trash.png" />
+    <None Include="Resources\trash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\trashico.ico" />
+    <None Include="Resources\trashico.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.0.1\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.0.1\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />

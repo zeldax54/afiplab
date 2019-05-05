@@ -93,3 +93,9 @@ C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\obj\Debug\UnitTestProje
 C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\obj\Debug\UnitTestProject.csproj.CopyComplete
 C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\obj\Debug\UnitTestProject.dll
 C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\obj\Debug\UnitTestProject.pdb
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.ReportViewer.WinForms.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.Reporting.dll
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.ReportViewer.WinForms.pdb
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.ReportViewer.WinForms.xml
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.Reporting.pdb
+C:\Users\zelda_b48pnza\source\repos\Afip\UnitTestProject\bin\Debug\Telerik.Reporting.xml

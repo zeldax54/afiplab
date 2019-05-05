@@ -182,26 +182,27 @@ namespace CUbaBuscaApp
             }
            
            formulario.ThemeName = effectiveTheme;
+          
             foreach (Control c in controls)
             {                
                 try
                 {
                     string x = c.Name;
-                    (c as RadControl).ThemeName = effectiveTheme;                  
+                  //  (c as RadControl).ThemeName = effectiveTheme;                  
                     (c as RadControl).Font = new System.Drawing.Font(fontName, (c as RadControl).Font.Size);
                     foreach (var ch in GetAll(c, typeof(RadTextBox))) {
-                        (ch as RadControl).ThemeName = effectiveTheme;
+                      //  (ch as RadControl).ThemeName = effectiveTheme;
                         (ch as RadControl).Font = new System.Drawing.Font(fontName, (c as RadControl).Font.Size);
                     }
                     foreach (var ch in GetAll(c, typeof(RadLabel)))
                     {
-                        (ch as RadControl).ThemeName = effectiveTheme;
+                      //  (ch as RadControl).ThemeName = effectiveTheme;
                         (ch as RadControl).Font = new System.Drawing.Font(fontName, (c as RadControl).Font.Size);
                     }
 
                     foreach (var ch in GetAll(c, typeof(RadMultiColumnComboBox)))
                     {
-                        (ch as RadControl).ThemeName = effectiveTheme;
+                      //  (ch as RadControl).ThemeName = effectiveTheme;
                         (ch as RadControl).Font = new System.Drawing.Font(fontName, (c as RadControl).Font.Size);
                     }
 
@@ -211,7 +212,8 @@ namespace CUbaBuscaApp
                 catch (Exception e) {
                     Logger.WriteLog("Error cambiando tema " + e.Message);
                 }     
-            }              
+            }
+            ThemeResolutionService.ApplicationThemeName = effectiveTheme;
         }
 
         public static IEnumerable<Control> GetAll(Control control, Type type)
@@ -237,7 +239,31 @@ namespace CUbaBuscaApp
             return f.cbteId == 13 || f.estadodesc.ToLower().Contains("anulad");
         }
 
-     
+        public static string StrZero(string word, int zeros)
+        {
+            string zerostr=String.Empty;
+            for (int i = 0; i < zeros; i++)
+                zerostr += "0";
+            return zerostr + word;
+        }
 
+        public static string ToStrZero(string word, int cant=5)
+        {
+            string zerostr = String.Empty;
+            int zeros = cant- word.Length;
+            for (int i = 0; i < zeros; i++)
+                zerostr += "0";
+            return zerostr + word;
+        }
+
+
+        public static string ExepLastLetter(string facturaLetrafact)
+        {
+            var s = facturaLetrafact.Split(new[] {' '});
+            string fin=String.Empty;
+            for (int i = 0; i < s.Length - 1; i++)
+                fin += s[i] + " ";
+            return fin;
+        }
     }
 }

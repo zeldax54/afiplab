@@ -55,10 +55,14 @@ namespace CUbaBuscaApp
                 if (c.Name != "cantidad")
                     c.ReadOnly = true;       
 
-           var ptoveta = DataContainer.Instance().dbManager.ConfigByKey("ptovta");
-            this.ptoveta.Text = ptoveta;
+            var eptoveta = DataContainer.Instance().dbManager.ConfigByKey("ptovta");
+            this.ptoveta.Text = eptoveta;
             this.Text = "Nueva factura";
             fecfacvDate.Value = DateTime.Now;
+
+            clientebombo.DataSource = DataContainer.Instance().dbManager.Clientes();
+            tipodocCliente.DataSource = DataContainer.Instance().dbManager.GenericTable("docs");
+
             if (_Factura != null && _Detalles != null)
             {
                 detallesGrid.AllowDeleteRow = false;
@@ -128,7 +132,7 @@ namespace CUbaBuscaApp
 
         private void FacturaForm_SizeChanged(object sender, EventArgs e)
         {
-           
+            tabControl1.Width = (int)(Width * 0.8);
             detallesGrid.Width =(int)( Width * 0.8);
         }
 
@@ -187,7 +191,7 @@ namespace CUbaBuscaApp
                     e.Row.Cells["monedaid"].Value = ((Moneda)((GridViewRowInfo)monedacombo.SelectedItem).DataBoundItem).Id;
                     e.Row.Cells["monedadesc"].Value = ((Moneda)((GridViewRowInfo)monedacombo.SelectedItem).DataBoundItem).Desc;
                     e.Row.Cells["total"].Value = 0;
-                    e.Row.Cells["cantidad"].Value = 1;
+                    //e.Row.Cells["cantidad"].Value = 1;
 
                     e.Row.Cells["impuestovalor"].Value = 0;
                     e.Row.Cells["preciodesc"].Value = precio.descripcion;
@@ -223,7 +227,6 @@ namespace CUbaBuscaApp
 
                 //totales
                 Totalizar();
-                
 
             }  
 
@@ -395,7 +398,7 @@ namespace CUbaBuscaApp
 
         private void radButton2_Click(object sender, EventArgs e)
         {
-            WsManager.GetFactura(_Factura);
+            new PrinterForm().ShowDialog();
         }
     }
 }

@@ -33,6 +33,7 @@ namespace CUbaBuscaApp
                 db.CreateTable<Moneda>();
                 db.CreateTable<Precio>();
                 db.CreateTable<PtoVenta>();
+                db.CreateTable<Responsabilidades>();
                 db.CreateTable<Servicio>();
                 db.CreateTable<usuario>();
             }
@@ -58,11 +59,15 @@ namespace CUbaBuscaApp
         
         public String Nombre { get; set; }
         
-        public String idtipoDoc { get; set; }
+        [NotNull]
+        public Int64 idtipoDoc { get; set; }
         
         public String conceptiva { get; set; }
         
-        public String nrodoc { get; set; }
+        [NotNull]
+        public Int64 nrodoc { get; set; }
+        
+        public String desctipodoc { get; set; }
         
     }
     
@@ -329,6 +334,16 @@ namespace CUbaBuscaApp
         public String Bloqueado { get; set; }
         
         public String FchBaja { get; set; }
+        
+    }
+    
+    public partial class Responsabilidades
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 id { get; set; }
+        
+        [NotNull]
+        public String responsabilidad { get; set; }
         
     }
     

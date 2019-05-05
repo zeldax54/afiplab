@@ -21,13 +21,7 @@ namespace CUbaBuscaApp
         private DateTime _lastSearchedDate;
         private void Satrt_Load(object sender, EventArgs e)
         {
-            log4net.Config.XmlConfigurator.Configure(); 
-
-            Logger.WriteLog("Aplicacion iniciada");
-            BdManager bd = new BdManager();
-            DataContainer.Instance().dbManager = bd;
-            string tema = DataContainer.Instance().dbManager.ConfigByKey("tema");
-            DataContainer.Instance().Themename = tema;
+            string tema = DataContainer.Instance().Themename;
             Helper.SetTheme(this.Controls,this);
 
             radMenuComboItem2.Items.Add("Dark");
@@ -36,7 +30,7 @@ namespace CUbaBuscaApp
             radMenuComboItem2.Items.Add("Blue");
             radMenuComboItem2.Items.Add("Inicial");
 
-            radMenuComboItem2.Items.Where(a=>a.Text.ToLower().Contains(tema)).First().Selected = true;
+            radMenuComboItem2.Items.First(a => a.Text.ToLower().Contains(tema)).Selected = true;
             radMenuComboItem2.ComboBoxElement.SelectedIndexChanged += ComboBoxElement_SelectedIndexChanged;
 
             radLabel1.Text = "Facturas de hoy " + DateTime.Now.Date.ToString("dd-MM-yyyy");
