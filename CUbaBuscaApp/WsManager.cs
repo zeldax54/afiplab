@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CUbaBuscaApp.afipService;
 
 namespace CUbaBuscaApp
 {
@@ -13,35 +14,35 @@ namespace CUbaBuscaApp
 
         public static IEnumerable<dynamic> MonedasHomolog()
         {           
-            afipService.Moneda[] monedas = service.FEParamGetTiposMonedas(getTicket()).ResultGet;
+            afipService.Moneda[] monedas = service.FEParamGetTiposMonedas(GetTicket()).ResultGet;
             DataContainer.Instance().dbManager.GenericHomolog(monedas, typeof(afipService.Moneda));
             return monedas;
         }
 
         public static IEnumerable<dynamic> IvassHomolog()
         {
-            afipService.IvaTipo[] ivas = service.FEParamGetTiposIva(getTicket()).ResultGet;
+            afipService.IvaTipo[] ivas = service.FEParamGetTiposIva(GetTicket()).ResultGet;
             DataContainer.Instance().dbManager.GenericHomolog(ivas, typeof(afipService.IvaTipo));
             return ivas;
         }
 
         public static IEnumerable<dynamic> ConceptosHomolog()
         {            
-            afipService.ConceptoTipo[] conceptos = service.FEParamGetTiposConcepto(getTicket()).ResultGet;
+            afipService.ConceptoTipo[] conceptos = service.FEParamGetTiposConcepto(GetTicket()).ResultGet;
             DataContainer.Instance().dbManager.GenericHomolog(conceptos, typeof(afipService.ConceptoTipo));
             return conceptos;
         }
 
         public static IEnumerable<dynamic> TiposFacturaHomolog()
         {
-            afipService.CbteTipo[] tipos = service.FEParamGetTiposCbte(getTicket()).ResultGet;
+            afipService.CbteTipo[] tipos = service.FEParamGetTiposCbte(GetTicket()).ResultGet;
             DataContainer.Instance().dbManager.GenericHomolog(tipos, typeof(afipService.CbteTipo));
             return tipos;
         }
 
         public static IEnumerable<dynamic> PtosVentaHomolog()
         {
-            afipService.PtoVenta[] puntos = service.FEParamGetPtosVenta(getTicket()).ResultGet;
+            afipService.PtoVenta[] puntos = service.FEParamGetPtosVenta(GetTicket()).ResultGet;
             if (puntos != null)
                 DataContainer.Instance().dbManager.GenericHomolog(puntos, typeof(afipService.PtoVenta));
             return puntos;
@@ -49,7 +50,7 @@ namespace CUbaBuscaApp
 
         public static IEnumerable<dynamic> TiposDocHomolog()
         {
-            afipService.DocTipo[] puntos = service.FEParamGetTiposDoc(getTicket()).ResultGet;
+            afipService.DocTipo[] puntos = service.FEParamGetTiposDoc(GetTicket()).ResultGet;
             if (puntos != null)
                 DataContainer.Instance().dbManager.GenericHomolog(puntos, typeof(afipService.DocTipo));
             return puntos;
@@ -77,7 +78,7 @@ namespace CUbaBuscaApp
                 };
 
                 List<afipService.FECAEDetRequest> detRequests = new List<afipService.FECAEDetRequest>();
-                int numeroComprobAutorizar = numeroComprobaAturizar(tipofacT.Id, pPtoVta);
+                int numeroComprobAutorizar = NumeroComprobaAturizar(tipofacT.Id, pPtoVta);
 
                 
 
@@ -130,7 +131,7 @@ namespace CUbaBuscaApp
                     asociados.Add(new afipService.CbteAsoc()
                     {
                         CbteFch = factura.fechafacturacion.ToString("yyyyMMdd"),
-                        Cuit = getTicket().Cuit.ToString(),
+                        Cuit = GetTicket().Cuit.ToString(),
                         Nro = nroanulado,
                         PtoVta = pPtoVta,
                         Tipo = tipofacT.Id
@@ -157,7 +158,7 @@ namespace CUbaBuscaApp
 
                 };
 
-                afipService.FECAEResponse response = service.FECAESolicitar(getTicket(), request);
+                afipService.FECAEResponse response = service.FECAESolicitar(GetTicket(), request);
                 if (response.Errors==null)
                 {
                     if (response.FeCabResp.Resultado == "A" || response.FeCabResp.Resultado == "P")
@@ -199,10 +200,10 @@ namespace CUbaBuscaApp
             }
         }
 
-        private static int numeroComprobaAturizar(int cbteTipo,int ptoVenta)
+        private static int NumeroComprobaAturizar(int cbteTipo,int ptoVenta)
         {
 
-            var comprob = service.FECompUltimoAutorizado(getTicket(), ptoVenta, cbteTipo);
+            var comprob = service.FECompUltimoAutorizado(GetTicket(), ptoVenta, cbteTipo);
             if (comprob.Errors?.Count() > 0)
                 throw new Exception("No se pudo consultar el ultimo comprobante autorizado " + 
                     String.Join(",", comprob.Errors.Select(e => e.Msg)));
@@ -213,7 +214,7 @@ namespace CUbaBuscaApp
         }
 
 
-        private static afipService.FEAuthRequest getTicket() {
+        private static afipService.FEAuthRequest GetTicket() {
             var ticket = LoginManager.ObtenerTicket();
             var cuit = long.Parse(DataContainer.Instance().dbManager.ConfigByKey("cuit"));
            return new afipService.FEAuthRequest()
@@ -222,6 +223,18 @@ namespace CUbaBuscaApp
                 Token = ticket.token,
                 Cuit = cuit
             };
+        }
+
+
+        public static void GetFactura(Factura f)
+        {
+            FECompConsultaReq req=new FECompConsultaReq()
+            {
+                CbteNro = (long)f.numeroFact,
+                CbteTipo = (int) f.cbteId,
+                PtoVta = (int)f.ptovta
+            };
+           var resp=  service.FECompConsultar(GetTicket(), req);
         }
     }
 }

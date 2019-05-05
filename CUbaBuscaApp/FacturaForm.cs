@@ -53,7 +53,7 @@ namespace CUbaBuscaApp
             detallesGrid.UserAddedRow += DetallesGrid_UserAddedRow;
             foreach (var c in detallesGrid.Columns)
                 if (c.Name != "cantidad")
-                    c.ReadOnly = true;        
+                    c.ReadOnly = true;       
 
            var ptoveta = DataContainer.Instance().dbManager.ConfigByKey("ptovta");
             this.ptoveta.Text = ptoveta;
@@ -106,6 +106,7 @@ namespace CUbaBuscaApp
                 detallesGrid.UserDeletedRow += DetallesGrid_UserDeletedRow;
                 detallesGrid.CellClick += DetallesGrid_CellClick; ;
                 radButton1.Text = "Facturar";
+                radButton2.Hide();
 
             }
             monedacombo.EditorControl.CurrentRowChanging += EditorControl_CurrentRowChanging;
@@ -127,6 +128,7 @@ namespace CUbaBuscaApp
 
         private void FacturaForm_SizeChanged(object sender, EventArgs e)
         {
+           
             detallesGrid.Width =(int)( Width * 0.8);
         }
 
@@ -185,11 +187,13 @@ namespace CUbaBuscaApp
                     e.Row.Cells["monedaid"].Value = ((Moneda)((GridViewRowInfo)monedacombo.SelectedItem).DataBoundItem).Id;
                     e.Row.Cells["monedadesc"].Value = ((Moneda)((GridViewRowInfo)monedacombo.SelectedItem).DataBoundItem).Desc;
                     e.Row.Cells["total"].Value = 0;
+                    e.Row.Cells["cantidad"].Value = 1;
+
                     e.Row.Cells["impuestovalor"].Value = 0;
                     e.Row.Cells["preciodesc"].Value = precio.descripcion;
                     e.Row.Cells["serviciodesc"].Value = DataContainer.Instance().dbManager.GetServicio(precio.ServicioId).nombre;
 
-
+                    Totalizar();
                     // detallesGrid.Rows.Add(e.Row);
 
                 }
@@ -232,16 +236,14 @@ namespace CUbaBuscaApp
             //
             float totalgravado = 0;
             float totalNogravado = 0;
-            foreach (var GridViewRowInfo in detallesGrid.Rows)
+            foreach (var gridViewRowInfo in detallesGrid.Rows)
             {
-                var detallefact = (FacturaDetalles)GridViewRowInfo.DataBoundItem;
+                var detallefact = (FacturaDetalles)gridViewRowInfo.DataBoundItem;
                 totalfactura += (float)(detallefact.total??0);
                 totalimp += (float)(detallefact.impuestovalor??0);
             }
             totalNogravado = totalfactura - totalimp;
-
             totalgravado = totalfactura - totalNogravado;
-
             this.total.Text = totalfactura.ToString();
             totalcimpuestos.Text = totalimp.ToString();
             this.gravado.Text = totalgravado.ToString();
@@ -389,6 +391,11 @@ namespace CUbaBuscaApp
                 NotaCredito();
             else
                 Facturar();
+        }
+
+        private void radButton2_Click(object sender, EventArgs e)
+        {
+            WsManager.GetFactura(_Factura);
         }
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition10 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition21 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition22 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition23 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition24 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition25 = new Telerik.WinControls.UI.TableViewDefinition();
             this.tipofactcombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -61,6 +61,7 @@
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.detallesGrid = new Telerik.WinControls.UI.RadGridView();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.radButton2 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo.EditorControl.MasterTemplate)).BeginInit();
@@ -100,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detallesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesGrid.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,7 +123,7 @@
             this.tipofactcombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.tipofactcombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.tipofactcombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.tipofactcombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition6;
+            this.tipofactcombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition21;
             this.tipofactcombo.EditorControl.Name = "NestedRadGridView";
             this.tipofactcombo.EditorControl.ReadOnly = true;
             this.tipofactcombo.EditorControl.ShowGroupPanel = false;
@@ -224,7 +226,7 @@
             this.conceptocombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.conceptocombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.conceptocombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.conceptocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition7;
+            this.conceptocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition22;
             this.conceptocombo.EditorControl.Name = "NestedRadGridView";
             this.conceptocombo.EditorControl.ReadOnly = true;
             this.conceptocombo.EditorControl.ShowGroupPanel = false;
@@ -255,7 +257,7 @@
             this.estadoCombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.estadoCombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.estadoCombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.estadoCombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition8;
+            this.estadoCombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition23;
             this.estadoCombo.EditorControl.Name = "NestedRadGridView";
             this.estadoCombo.EditorControl.ReadOnly = true;
             this.estadoCombo.EditorControl.ShowGroupPanel = false;
@@ -302,7 +304,7 @@
             this.monedacombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.monedacombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.monedacombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.monedacombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition9;
+            this.monedacombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition24;
             this.monedacombo.EditorControl.Name = "NestedRadGridView";
             this.monedacombo.EditorControl.ReadOnly = true;
             this.monedacombo.EditorControl.ShowGroupPanel = false;
@@ -439,7 +441,7 @@
             // 
             // 
             // 
-            this.detallesGrid.MasterTemplate.ViewDefinition = tableViewDefinition10;
+            this.detallesGrid.MasterTemplate.ViewDefinition = tableViewDefinition25;
             this.detallesGrid.Name = "detallesGrid";
             this.detallesGrid.Size = new System.Drawing.Size(823, 231);
             this.detallesGrid.TabIndex = 5;
@@ -453,11 +455,21 @@
             this.radButton1.Text = "radButton1";
             this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
+            // radButton2
+            // 
+            this.radButton2.Location = new System.Drawing.Point(133, 247);
+            this.radButton2.Name = "radButton2";
+            this.radButton2.Size = new System.Drawing.Size(110, 24);
+            this.radButton2.TabIndex = 7;
+            this.radButton2.Text = "Imprimir";
+            this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
+            // 
             // FacturaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 570);
+            this.Controls.Add(this.radButton2);
             this.Controls.Add(this.radButton1);
             this.Controls.Add(this.detallesGrid);
             this.Controls.Add(this.radGroupBox2);
@@ -511,6 +523,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detallesGrid.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -545,5 +558,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel12;
         private Telerik.WinControls.UI.RadDateTimePicker fecfacvDate;
         private Telerik.WinControls.UI.RadButton radButton1;
+        private Telerik.WinControls.UI.RadButton radButton2;
     }
 }
