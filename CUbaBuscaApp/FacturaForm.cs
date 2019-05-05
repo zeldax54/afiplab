@@ -58,6 +58,7 @@ namespace CUbaBuscaApp
            var ptoveta = DataContainer.Instance().dbManager.ConfigByKey("ptovta");
             this.ptoveta.Text = ptoveta;
             this.Text = "Nueva factura";
+            fecfacvDate.Value = DateTime.Now;
             if (_Factura != null && _Detalles != null)
             {
                 detallesGrid.AllowDeleteRow = false;
@@ -234,8 +235,8 @@ namespace CUbaBuscaApp
             foreach (var GridViewRowInfo in detallesGrid.Rows)
             {
                 var detallefact = (FacturaDetalles)GridViewRowInfo.DataBoundItem;
-                totalfactura += (float)detallefact.total;
-                totalimp += (float)detallefact.impuestovalor;
+                totalfactura += (float)(detallefact.total??0);
+                totalimp += (float)(detallefact.impuestovalor??0);
             }
             totalNogravado = totalfactura - totalimp;
 
@@ -267,7 +268,7 @@ namespace CUbaBuscaApp
             if (detallesGrid.RowCount > 0)
             {
                
-                DialogResult res = MessageManager.SowMessage("Se enviara esta factura a la Afip", ThemeName, false, true);
+                DialogResult res = MessageManager.SowMessage("Se enviara esta factura a la Afip comprobante con fecha " + fecfacvDate.Value.ToString("dd-MM-yyyy"), ThemeName, false, true);
                 if (res == DialogResult.Yes)
                 {
                     Cursor = Cursors.WaitCursor;
@@ -319,7 +320,7 @@ namespace CUbaBuscaApp
             if (_Factura.estadoId == 2)
             {
               
-                DialogResult res = MessageManager.SowMessage("Se enviara la anulación de esta factura a la Afip.", ThemeName, false, true);
+                DialogResult res = MessageManager.SowMessage("Se enviara la anulación de esta factura a la Afip con fecha "+ fecfacvDate.Value.ToString("dd-MM-yyyy")+".", ThemeName, false, true);
                 if (res == DialogResult.Yes)
                 {
                     Cursor = Cursors.WaitCursor;
@@ -346,7 +347,6 @@ namespace CUbaBuscaApp
                     nC.NroRef = _Factura.NroRef;
                     nC.fechafacturacion = fecfacvDate.Value;
                     var ncdetalles = _Detalles;
-
 
                     try
                     {

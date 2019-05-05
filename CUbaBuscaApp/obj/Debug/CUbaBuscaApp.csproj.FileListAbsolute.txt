@@ -93,3 +93,4 @@ C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.csp
 C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.Homologaciones.resources
 C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.IvaEditorForm.resources
 C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.FacturacionRapida.resources
+C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.FacturacionRapidaForm.resources

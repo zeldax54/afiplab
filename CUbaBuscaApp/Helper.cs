@@ -99,16 +99,17 @@ namespace CUbaBuscaApp
             r.MultiSelect = false;
             
             if(columnsBlock!=null)
-            foreach (var colum in columnsBlock)
-            {
+             foreach (var colum in columnsBlock)
+              {
                 r.Columns[colum].ReadOnly = true;
                 r.Columns[colum].IsVisible = false;
-            }
+              }
             r.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
             r.EnableFiltering = true;
 
         }
 
+       
         public static void OcularColumsCombo(RadMultiColumnComboBox [] combo,IEnumerable<string> hide)
         {
             
@@ -131,7 +132,7 @@ namespace CUbaBuscaApp
         public static float myparseFloat(string str) {
             if (string.IsNullOrWhiteSpace(str))
                 str = "0";
-             str = str.Replace("%", "");
+            str = str.Replace("%", "");
             NumberFormatInfo formatInfo = new NumberFormatInfo();
             formatInfo.CurrencyDecimalSeparator = ".";
             int isneg = 1;

@@ -83,6 +83,16 @@ namespace CUbaBuscaApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
+        internal static System.Drawing.Icon delete {
+            get {
+                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
         internal static System.Drawing.Icon Designcontest_Ecommerce_Business_Invoice {
             get {
                 object obj = ResourceManager.GetObject("Designcontest_Ecommerce_Business_Invoice", resourceCulture);
@@ -127,6 +137,26 @@ namespace CUbaBuscaApp.Properties {
             get {
                 object obj = ResourceManager.GetObject("new16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash {
+            get {
+                object obj = ResourceManager.GetObject("trash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        internal static System.Drawing.Icon trashico {
+            get {
+                object obj = ResourceManager.GetObject("trashico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

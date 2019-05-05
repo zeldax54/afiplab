@@ -193,6 +193,16 @@ namespace CUbaBuscaApp
         
         public Double? precio { get; set; }
         
+        public Int64? cbteid { get; set; }
+        
+        public String letraFact { get; set; }
+        
+        public Int64? conceptoid { get; set; }
+        
+        public String conceptoDesc { get; set; }
+        
+        public Int64? ptovta { get; set; }
+        
     }
     
     public partial class FacturaDetalles

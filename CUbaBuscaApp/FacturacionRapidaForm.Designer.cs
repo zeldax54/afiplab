@@ -1,6 +1,6 @@
 ﻿namespace CUbaBuscaApp
 {
-    partial class FacturacionRapida
+    partial class FacturacionRapidaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,28 +37,28 @@
             // 
             // radGridView1
             // 
-            this.radGridView1.Location = new System.Drawing.Point(31, 12);
+            this.radGridView1.Location = new System.Drawing.Point(37, 31);
             // 
             // 
             // 
             this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(709, 351);
+            this.radGridView1.Size = new System.Drawing.Size(725, 385);
             this.radGridView1.TabIndex = 0;
             // 
-            // FacturacionRapida
+            // FacturacionRapidaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 387);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.radGridView1);
-            this.Name = "FacturacionRapida";
+            this.Name = "FacturacionRapidaForm";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "FacturacionRapida";
-            this.Load += new System.EventHandler(this.FacturacionRapida_Load);
+            this.Text = "FacturacionRapidaForm";
+            this.Load += new System.EventHandler(this.FacturacionRapidaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

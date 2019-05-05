@@ -47,6 +47,7 @@ namespace CUbaBuscaApp
 
             radGridView1.CellDoubleClick += RadGridView1_CellDoubleClick;
             WindowState = FormWindowState.Maximized;
+            radDateTimePicker1.Value = DateTime.Now;
 
         }
 
@@ -292,6 +293,12 @@ namespace CUbaBuscaApp
         private void radMenuItem32_Click(object sender, EventArgs e)
         {
             new FacturacionRapida().ShowDialog();
+        }
+
+        private void radMenuItem33_Click(object sender, EventArgs e)
+        {
+            new FacturacionRapidaForm().ShowDialog();
+            FormatoGrid(radDateTimePicker1.Value);
         }
 
         //private void RadGridView1_GroupSummaryEvaluate(object sender, GroupSummaryEvaluationEventArgs e)

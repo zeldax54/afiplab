@@ -304,7 +304,6 @@ namespace CUbaBuscaApp
 
         public EstadoFactura EstadooById(long estadoId)
         {
-           
             return db.Find<EstadoFactura>(estadoId);
         }
 
@@ -313,14 +312,14 @@ namespace CUbaBuscaApp
             return db.Find<afipService.CbteTipo>(a=>a.Id==(int)tipoId);
         }
 
+     
         public Moneda MonedatById(long monedaId)
         {
             return db.Find<Moneda>(monedaId);
         }
 
         public int idInverso(int idcomprob) {
-            return (int) db.Table<Inversocomprob>().Where(a => a.idcomprob
-            == idcomprob).First().idinverso;
+            return (int) db.Table<Inversocomprob>().First(a => a.idcomprob == idcomprob).idinverso;
         }
 
         //Facturacion Rapida
@@ -345,6 +344,18 @@ namespace CUbaBuscaApp
             try
             {
                 db.Update(r);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public void DeleteConf(facturacionRapidaconf r)
+        {
+            try
+            {
+                db.Delete(r);
             }
             catch (Exception e)
             {

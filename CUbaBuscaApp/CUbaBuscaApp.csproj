@@ -118,6 +118,12 @@
     <Compile Include="FacturacionRapida.Designer.cs">
       <DependentUpon>FacturacionRapida.cs</DependentUpon>
     </Compile>
+    <Compile Include="FacturacionRapidaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturacionRapidaForm.Designer.cs">
+      <DependentUpon>FacturacionRapidaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,7 @@
     <Compile Include="LoginManager.cs" />
     <Compile Include="MailReader.cs" />
     <Compile Include="MessageManager.cs" />
+    <Compile Include="MyEnglishRadGridLocalizationProvider.cs" />
     <Compile Include="PreciosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacturacionRapida.resx">
       <DependentUpon>FacturacionRapida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturacionRapidaForm.resx">
+      <DependentUpon>FacturacionRapidaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaForm.resx">
       <DependentUpon>FacturaForm.cs</DependentUpon>
@@ -345,6 +355,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\afipService\service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trashico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.0.1\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.0.1\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />

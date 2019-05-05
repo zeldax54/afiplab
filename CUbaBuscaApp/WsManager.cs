@@ -91,11 +91,11 @@ namespace CUbaBuscaApp
                 {
                     ivas.Add(new afipService.AlicIva()
                     {
-                        BaseImp = (double)detalle.impuestobase,
-                        Id = (int)detalle.impuestoId,
-                        Importe = (double)detalle.impuestovalor
+                        BaseImp = (double) (detalle.impuestobase ?? 0),
+                        Id = (int)(detalle.impuestoId??0),
+                        Importe = (double)(detalle.impuestovalor??0)
                     });
-                    totalIva += (double)detalle.impuestovalor;
+                    totalIva += (double)(detalle.impuestovalor??0);
 
                 }
 
