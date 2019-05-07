@@ -27,6 +27,7 @@ namespace CUbaBuscaApp
                 db.CreateTable<Factura>();
                 db.CreateTable<facturacionRapidaconf>();
                 db.CreateTable<FacturaDetalles>();
+                db.CreateTable<formaspago>();
                 db.CreateTable<Inversocomprob>();
                 db.CreateTable<IvaTipo>();
                 db.CreateTable<Logininfo>();
@@ -59,8 +60,7 @@ namespace CUbaBuscaApp
         
         public String Nombre { get; set; }
         
-        [NotNull]
-        public Int64 idtipoDoc { get; set; }
+        public Int64? idtipoDoc { get; set; }
         
         public String conceptiva { get; set; }
         
@@ -68,6 +68,8 @@ namespace CUbaBuscaApp
         public Int64 nrodoc { get; set; }
         
         public String desctipodoc { get; set; }
+        
+        public String docmicilio { get; set; }
         
     }
     
@@ -171,6 +173,8 @@ namespace CUbaBuscaApp
         [NotNull]
         public DateTime fechafacturacion { get; set; }
         
+        public Int64? formapagoId { get; set; }
+        
     }
     
     public partial class facturacionRapidaconf
@@ -238,6 +242,14 @@ namespace CUbaBuscaApp
         public String preciodesc { get; set; }
         
         public String serviciodesc { get; set; }
+        
+    }
+    
+    public partial class formaspago
+    {
+        public Int64? id { get; set; }
+        
+        public String descripcion { get; set; }
         
     }
     

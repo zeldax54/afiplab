@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Telerik.WinControls.UI;
 
 namespace CUbaBuscaApp
@@ -36,10 +37,17 @@ namespace CUbaBuscaApp
             estadoCombo.DataSource= DataContainer.Instance().dbManager.GenericTable("estado");
             conceptocombo.DataSource = DataContainer.Instance().dbManager.GenericTable("conceptos");
 
+            clientebombo.DataSource = DataContainer.Instance().dbManager.Clientes();
+            tipodocCliente.DataSource = DataContainer.Instance().dbManager.GenericTable("docs");
+            formapagocombo.DataSource = DataContainer.Instance().dbManager.GenericTable("formapago");
+            respanteivacliente.DataSource= DataContainer.Instance().dbManager.GenericTable("respanteivacliente");
+
             //ocular cols
+
             Helper.OcularColumsCombo(new[] { tipofactcombo,
                 monedacombo, estadoCombo,
-                conceptocombo }, new []{ "Id","id", "FchDesde", "FchHasta" });
+                conceptocombo,clientebombo,tipodocCliente,formapagocombo }, new []{ "Id","id", "FchDesde", "FchHasta","idtipoDoc" });
+
             setColumsMode(new[] { tipofactcombo, monedacombo }, BestFitColumnMode.DisplayedCells);
             //
 
@@ -60,8 +68,7 @@ namespace CUbaBuscaApp
             this.Text = "Nueva factura";
             fecfacvDate.Value = DateTime.Now;
 
-            clientebombo.DataSource = DataContainer.Instance().dbManager.Clientes();
-            tipodocCliente.DataSource = DataContainer.Instance().dbManager.GenericTable("docs");
+           
 
             if (_Factura != null && _Detalles != null)
             {
@@ -92,12 +99,25 @@ namespace CUbaBuscaApp
 
                 radButton1.Text = "Anular";
                 if (Helper.ReadOnlyCmprob(_Factura)) {
-                    radButton1.Hide();                    
+                    radButton1.Hide();    
+                   
                 }
                 tipofactcombo.MultiColumnComboBoxElement.TextBoxElement.TextChanging += TextBoxElement_TextChanging1;
                 monedacombo.MultiColumnComboBoxElement.TextBoxElement.TextChanging += TextBoxElement_TextChanging1;
                 conceptocombo.MultiColumnComboBoxElement.TextBoxElement.TextChanging += TextBoxElement_TextChanging1;
                 estadoCombo.MultiColumnComboBoxElement.TextBoxElement.TextChanging += TextBoxElement_TextChanging1;
+                //Cliente
+                if (_Factura.clientdId != null)
+                {
+                    clientebombo.ValueMember = "Id";
+                    clientebombo.SelectedValue = DataContainer.Instance().dbManager.GetCliente((long)_Factura.clientdId).id;
+                }
+
+              
+                else
+                 clientebombo.SelectedIndex = -1;
+                crearclientebutton.Hide();
+
             }
             else {
 
@@ -111,6 +131,7 @@ namespace CUbaBuscaApp
                 detallesGrid.CellClick += DetallesGrid_CellClick; ;
                 radButton1.Text = "Facturar";
                 radButton2.Hide();
+                clientebombo.SelectedIndex = -1;
 
             }
             monedacombo.EditorControl.CurrentRowChanging += EditorControl_CurrentRowChanging;
@@ -270,10 +291,17 @@ namespace CUbaBuscaApp
 
         private void Facturar() {
 
-            if (detallesGrid.RowCount > 0)
+            if (detallesGrid.RowCount == 0)
             {
-               
-                DialogResult res = MessageManager.SowMessage("Se enviara esta factura a la Afip comprobante con fecha " + fecfacvDate.Value.ToString("dd-MM-yyyy"), ThemeName, false, true);
+                MessageManager.SowMessage("No hay detalles para facturar", ThemeName);
+                return;
+            }
+            if(float.Parse(DataContainer.Instance().dbManager.ConfigByKey("maxmontonocliente")) <= double.Parse(total.Text) && clientebombo.SelectedIndex==-1)
+            {
+                MessageManager.SowMessage($"Para facturas mayores o iguales a ${DataContainer.Instance().dbManager.ConfigByKey("maxmontonocliente")} es necesario indicar el" +
+                                          $" nombre del cliente", ThemeName);return;
+            }
+            DialogResult res = MessageManager.SowMessage("Se enviara esta factura a la Afip comprobante con fecha " + fecfacvDate.Value.ToString("dd-MM-yyyy"), ThemeName, false, true);
                 if (res == DialogResult.Yes)
                 {
                     Cursor = Cursors.WaitCursor;
@@ -292,7 +320,9 @@ namespace CUbaBuscaApp
                     f.estadodesc = ((EstadoFactura)((GridViewDataRowInfo)estadoCombo.SelectedItem).DataBoundItem).descripcion;
                     int ptovta = int.Parse(this.ptoveta.Text);
                     f.ptovta = ptovta;
-
+                    f.formapagoId = ((formaspago) ((GridViewDataRowInfo) formapagocombo.SelectedItem).DataBoundItem).id;
+                    if (clientebombo.SelectedIndex != -1)
+                        f.clientdId = ((Clientes) ((GridViewDataRowInfo) clientebombo.SelectedItem).DataBoundItem).id;
                     try
                     {
                         f.Id = DataContainer.Instance().dbManager.SaveFact(f);
@@ -313,12 +343,7 @@ namespace CUbaBuscaApp
                         MessageManager.SowMessage(ex.Message, ThemeName);
                     }
                 }
-            }
-            else
-            {
-
-                MessageManager.SowMessage("No hay detalles para facturar", ThemeName);
-            }
+           
         }
 
         private void NotaCredito() {
@@ -351,8 +376,9 @@ namespace CUbaBuscaApp
                     nC.nombrecliente = _Factura.nombrecliente;
                     nC.NroRef = _Factura.NroRef;
                     nC.fechafacturacion = fecfacvDate.Value;
+                    nC.formapagoId = _Factura.formapagoId;
+                    nC.clientdId = _Factura.clientdId;
                     var ncdetalles = _Detalles;
-
                     try
                     {
                         nC.Id = DataContainer.Instance().dbManager.SaveFact(nC);
@@ -399,6 +425,51 @@ namespace CUbaBuscaApp
         private void radButton2_Click(object sender, EventArgs e)
         {
             new PrinterForm().ShowDialog();
+        }
+
+        private void crearclientebutton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nombreCliente.Text) || string.IsNullOrWhiteSpace(nrodoccliente.Text))
+            {
+                MessageManager.SowMessage("El nombre y numero de documento del cliente son requeridos", ThemeName);return;
+            }
+
+            if (tipodocCliente.SelectedIndex == -1 || respanteivacliente.SelectedIndex == -1)
+            {
+                MessageManager.SowMessage("El tipo de documento y la responsabilidad ante IVA del cliente son requeridos", ThemeName); return;
+            }
+
+            long nuber = 0;
+            if (!long.TryParse(nrodoccliente.Text, out nuber))
+            {
+                MessageManager.SowMessage("El numero del cliente debe ser un dato numerico", ThemeName); return;
+            }
+
+            Clientes c = new Clientes()
+            {
+                nrodoc = nuber,
+                idtipoDoc=((afipService.DocTipo)((GridViewDataRowInfo)tipodocCliente.SelectedItem).DataBoundItem).Id,
+                Nombre = nombreCliente.Text,
+                conceptiva = ((Responsabilidades)((GridViewDataRowInfo)respanteivacliente.SelectedItem).DataBoundItem).responsabilidad,
+                desctipodoc = ((afipService.DocTipo)((GridViewDataRowInfo)tipodocCliente.SelectedItem).DataBoundItem).Desc,
+                docmicilio = domiciliocliente.Text
+            };
+
+            var cExiste = DataContainer.Instance().dbManager.ExisteCliente(c);
+            if (cExiste != null)
+            {
+                MessageManager.SowMessage("Ya existe un cliente cargado con ese numero y tipo de documento", ThemeName);
+                clientebombo.SelectedItem = cExiste;
+            }
+            else
+            {
+                c.id=DataContainer.Instance().dbManager.AddCliente(c);
+                clientebombo.DataSource= DataContainer.Instance().dbManager.Clientes();
+                clientebombo.ValueMember = "Id";
+                clientebombo.SelectedValue =c.id;
+            }
+
+
         }
     }
 }

@@ -112,12 +112,18 @@ namespace CUbaBuscaApp
        
         public static void OcularColumsCombo(RadMultiColumnComboBox [] combo,IEnumerable<string> hide)
         {
-            
-            foreach (var c in combo)                
+
+            foreach (var c in combo)
+            {
+                c.MultiColumnComboBoxElement.Size =
+                    new System.Drawing.Size(c.Width, c.MultiColumnComboBoxElement.Size.Height);
                 foreach (var col in c.Columns)
-                    foreach (var h in hide)
-                        if (col.Name == h)
-                            col.IsVisible = false;
+                foreach (var h in hide)
+                    if (col.Name == h)
+                        col.IsVisible = false;
+            }
+
+         
         }
 
         public static void HideSomeColums(RadGridView r, string[] columnsBlock) {

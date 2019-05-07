@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.tipofactcombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -68,18 +69,23 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.nombreCliente = new Telerik.WinControls.UI.RadTextBoxControl();
-            this.clientebombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
-            this.tipodocCliente = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
-            this.nrodoccliente = new Telerik.WinControls.UI.RadTextBoxControl();
-            this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
-            this.respanteivacliente = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
+            this.nombreCliente = new Telerik.WinControls.UI.RadTextBoxControl();
+            this.tipodocCliente = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.respanteivacliente = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
+            this.nrodoccliente = new Telerik.WinControls.UI.RadTextBoxControl();
+            this.clientebombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.formapagocombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.radLabel18 = new Telerik.WinControls.UI.RadLabel();
+            this.crearclientebutton = new Telerik.WinControls.UI.RadButton();
+            this.radLabel19 = new Telerik.WinControls.UI.RadLabel();
+            this.domiciliocliente = new Telerik.WinControls.UI.RadTextBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo.EditorControl.MasterTemplate)).BeginInit();
@@ -123,26 +129,33 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nombreCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientebombo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).BeginInit();
             this.radGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nombreCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipodocCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipodocCliente.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipodocCliente.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nrodoccliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.respanteivacliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.respanteivacliente.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.respanteivacliente.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
-            this.radPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nrodoccliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientebombo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crearclientebutton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domiciliocliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,7 +185,7 @@
             this.tipofactcombo.EditorControl.TabIndex = 0;
             this.tipofactcombo.Location = new System.Drawing.Point(13, 79);
             this.tipofactcombo.Name = "tipofactcombo";
-            this.tipofactcombo.Size = new System.Drawing.Size(329, 20);
+            this.tipofactcombo.Size = new System.Drawing.Size(189, 20);
             this.tipofactcombo.TabIndex = 1;
             this.tipofactcombo.TabStop = false;
             this.tipofactcombo.Text = "radMultiColumnComboBox1";
@@ -188,6 +201,8 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.radLabel18);
+            this.radGroupBox1.Controls.Add(this.formapagocombo);
             this.radGroupBox1.Controls.Add(this.radLabel12);
             this.radGroupBox1.Controls.Add(this.fecfacvDate);
             this.radGroupBox1.Controls.Add(this.radLabel10);
@@ -209,7 +224,7 @@
             // 
             // radLabel12
             // 
-            this.radLabel12.Location = new System.Drawing.Point(207, 110);
+            this.radLabel12.Location = new System.Drawing.Point(217, 55);
             this.radLabel12.Name = "radLabel12";
             this.radLabel12.Size = new System.Drawing.Size(88, 18);
             this.radLabel12.TabIndex = 4;
@@ -217,7 +232,7 @@
             // 
             // fecfacvDate
             // 
-            this.fecfacvDate.Location = new System.Drawing.Point(207, 132);
+            this.fecfacvDate.Location = new System.Drawing.Point(217, 77);
             this.fecfacvDate.Name = "fecfacvDate";
             this.fecfacvDate.Size = new System.Drawing.Size(195, 20);
             this.fecfacvDate.TabIndex = 7;
@@ -267,7 +282,7 @@
             this.conceptocombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.conceptocombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.conceptocombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.conceptocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.conceptocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.conceptocombo.EditorControl.Name = "NestedRadGridView";
             this.conceptocombo.EditorControl.ReadOnly = true;
             this.conceptocombo.EditorControl.ShowGroupPanel = false;
@@ -298,7 +313,7 @@
             this.estadoCombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.estadoCombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.estadoCombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.estadoCombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.estadoCombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition4;
             this.estadoCombo.EditorControl.Name = "NestedRadGridView";
             this.estadoCombo.EditorControl.ReadOnly = true;
             this.estadoCombo.EditorControl.ShowGroupPanel = false;
@@ -345,7 +360,7 @@
             this.monedacombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.monedacombo.EditorControl.MasterTemplate.EnableGrouping = false;
             this.monedacombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.monedacombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition4;
+            this.monedacombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition5;
             this.monedacombo.EditorControl.Name = "NestedRadGridView";
             this.monedacombo.EditorControl.ReadOnly = true;
             this.monedacombo.EditorControl.ShowGroupPanel = false;
@@ -483,7 +498,7 @@
             // 
             // 
             // 
-            this.detallesGrid.MasterTemplate.ViewDefinition = tableViewDefinition5;
+            this.detallesGrid.MasterTemplate.ViewDefinition = tableViewDefinition6;
             this.detallesGrid.Name = "detallesGrid";
             this.detallesGrid.Size = new System.Drawing.Size(822, 232);
             this.detallesGrid.TabIndex = 5;
@@ -538,44 +553,6 @@
             this.tabPage2.Text = "Cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // nombreCliente
-            // 
-            this.nombreCliente.Location = new System.Drawing.Point(71, 52);
-            this.nombreCliente.Name = "nombreCliente";
-            this.nombreCliente.Size = new System.Drawing.Size(264, 20);
-            this.nombreCliente.TabIndex = 0;
-            // 
-            // clientebombo
-            // 
-            this.clientebombo.AutoSizeDropDownColumnMode = Telerik.WinControls.UI.BestFitColumnMode.DisplayedDataCells;
-            // 
-            // clientebombo.NestedRadGridView
-            // 
-            this.clientebombo.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.clientebombo.EditorControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clientebombo.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.clientebombo.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // 
-            // 
-            this.clientebombo.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.clientebombo.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.clientebombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.clientebombo.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.clientebombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.clientebombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition8;
-            this.clientebombo.EditorControl.Name = "NestedRadGridView";
-            this.clientebombo.EditorControl.ReadOnly = true;
-            this.clientebombo.EditorControl.ShowGroupPanel = false;
-            this.clientebombo.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.clientebombo.EditorControl.TabIndex = 0;
-            this.clientebombo.Location = new System.Drawing.Point(51, 21);
-            this.clientebombo.Name = "clientebombo";
-            this.clientebombo.Size = new System.Drawing.Size(445, 20);
-            this.clientebombo.TabIndex = 2;
-            this.clientebombo.TabStop = false;
-            this.clientebombo.Text = "radMultiColumnComboBox1";
-            // 
             // radGroupBox3
             // 
             this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
@@ -590,6 +567,33 @@
             this.radGroupBox3.TabIndex = 3;
             this.radGroupBox3.Text = "Crear/Cargar";
             // 
+            // radLabel17
+            // 
+            this.radLabel17.Location = new System.Drawing.Point(6, 23);
+            this.radLabel17.Name = "radLabel17";
+            this.radLabel17.Size = new System.Drawing.Size(39, 18);
+            this.radLabel17.TabIndex = 3;
+            this.radLabel17.Text = "Buscar";
+            // 
+            // radPanel1
+            // 
+            this.radPanel1.Controls.Add(this.radLabel19);
+            this.radPanel1.Controls.Add(this.domiciliocliente);
+            this.radPanel1.Controls.Add(this.crearclientebutton);
+            this.radPanel1.Controls.Add(this.radLabel13);
+            this.radPanel1.Controls.Add(this.radLabel16);
+            this.radPanel1.Controls.Add(this.nombreCliente);
+            this.radPanel1.Controls.Add(this.tipodocCliente);
+            this.radPanel1.Controls.Add(this.respanteivacliente);
+            this.radPanel1.Controls.Add(this.radLabel14);
+            this.radPanel1.Controls.Add(this.radLabel15);
+            this.radPanel1.Controls.Add(this.nrodoccliente);
+            this.radPanel1.Location = new System.Drawing.Point(9, 47);
+            this.radPanel1.Name = "radPanel1";
+            this.radPanel1.Size = new System.Drawing.Size(807, 168);
+            this.radPanel1.TabIndex = 6;
+            this.radPanel1.Text = "Nuevo";
+            // 
             // radLabel13
             // 
             this.radLabel13.Location = new System.Drawing.Point(71, 28);
@@ -597,6 +601,21 @@
             this.radLabel13.Size = new System.Drawing.Size(115, 18);
             this.radLabel13.TabIndex = 1;
             this.radLabel13.Text = "Nombre/Razon Social";
+            // 
+            // radLabel16
+            // 
+            this.radLabel16.Location = new System.Drawing.Point(68, 87);
+            this.radLabel16.Name = "radLabel16";
+            this.radLabel16.Size = new System.Drawing.Size(133, 18);
+            this.radLabel16.TabIndex = 4;
+            this.radLabel16.Text = "Responsabilidad ante IVA";
+            // 
+            // nombreCliente
+            // 
+            this.nombreCliente.Location = new System.Drawing.Point(71, 52);
+            this.nombreCliente.Name = "nombreCliente";
+            this.nombreCliente.Size = new System.Drawing.Size(264, 20);
+            this.nombreCliente.TabIndex = 0;
             // 
             // tipodocCliente
             // 
@@ -616,7 +635,7 @@
             this.tipodocCliente.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.tipodocCliente.EditorControl.MasterTemplate.EnableGrouping = false;
             this.tipodocCliente.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.tipodocCliente.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition6;
+            this.tipodocCliente.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition7;
             this.tipodocCliente.EditorControl.Name = "NestedRadGridView";
             this.tipodocCliente.EditorControl.ReadOnly = true;
             this.tipodocCliente.EditorControl.ShowGroupPanel = false;
@@ -628,37 +647,6 @@
             this.tipodocCliente.TabIndex = 3;
             this.tipodocCliente.TabStop = false;
             this.tipodocCliente.Text = "Tipo de documento";
-            // 
-            // radLabel14
-            // 
-            this.radLabel14.Location = new System.Drawing.Point(354, 28);
-            this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(106, 18);
-            this.radLabel14.TabIndex = 2;
-            this.radLabel14.Text = "Tipo de Documento";
-            // 
-            // nrodoccliente
-            // 
-            this.nrodoccliente.Location = new System.Drawing.Point(563, 52);
-            this.nrodoccliente.Name = "nrodoccliente";
-            this.nrodoccliente.Size = new System.Drawing.Size(212, 20);
-            this.nrodoccliente.TabIndex = 4;
-            // 
-            // radLabel15
-            // 
-            this.radLabel15.Location = new System.Drawing.Point(563, 28);
-            this.radLabel15.Name = "radLabel15";
-            this.radLabel15.Size = new System.Drawing.Size(90, 18);
-            this.radLabel15.TabIndex = 3;
-            this.radLabel15.Text = "Nro. Documento";
-            // 
-            // radLabel16
-            // 
-            this.radLabel16.Location = new System.Drawing.Point(68, 87);
-            this.radLabel16.Name = "radLabel16";
-            this.radLabel16.Size = new System.Drawing.Size(133, 18);
-            this.radLabel16.TabIndex = 4;
-            this.radLabel16.Text = "Responsabilidad ante IVA";
             // 
             // respanteivacliente
             // 
@@ -678,7 +666,7 @@
             this.respanteivacliente.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.respanteivacliente.EditorControl.MasterTemplate.EnableGrouping = false;
             this.respanteivacliente.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.respanteivacliente.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition7;
+            this.respanteivacliente.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition8;
             this.respanteivacliente.EditorControl.Name = "NestedRadGridView";
             this.respanteivacliente.EditorControl.ReadOnly = true;
             this.respanteivacliente.EditorControl.ShowGroupPanel = false;
@@ -689,31 +677,121 @@
             this.respanteivacliente.Size = new System.Drawing.Size(189, 20);
             this.respanteivacliente.TabIndex = 5;
             this.respanteivacliente.TabStop = false;
-            this.respanteivacliente.Text = "Tipo de documento";
             // 
-            // radPanel1
+            // radLabel14
             // 
-            this.radPanel1.Controls.Add(this.radLabel13);
-            this.radPanel1.Controls.Add(this.radLabel16);
-            this.radPanel1.Controls.Add(this.nombreCliente);
-            this.radPanel1.Controls.Add(this.tipodocCliente);
-            this.radPanel1.Controls.Add(this.respanteivacliente);
-            this.radPanel1.Controls.Add(this.radLabel14);
-            this.radPanel1.Controls.Add(this.radLabel15);
-            this.radPanel1.Controls.Add(this.nrodoccliente);
-            this.radPanel1.Location = new System.Drawing.Point(9, 47);
-            this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(807, 168);
-            this.radPanel1.TabIndex = 6;
-            this.radPanel1.Text = "Nuevo";
+            this.radLabel14.Location = new System.Drawing.Point(354, 28);
+            this.radLabel14.Name = "radLabel14";
+            this.radLabel14.Size = new System.Drawing.Size(106, 18);
+            this.radLabel14.TabIndex = 2;
+            this.radLabel14.Text = "Tipo de Documento";
             // 
-            // radLabel17
+            // radLabel15
             // 
-            this.radLabel17.Location = new System.Drawing.Point(6, 23);
-            this.radLabel17.Name = "radLabel17";
-            this.radLabel17.Size = new System.Drawing.Size(39, 18);
-            this.radLabel17.TabIndex = 3;
-            this.radLabel17.Text = "Buscar";
+            this.radLabel15.Location = new System.Drawing.Point(563, 28);
+            this.radLabel15.Name = "radLabel15";
+            this.radLabel15.Size = new System.Drawing.Size(90, 18);
+            this.radLabel15.TabIndex = 3;
+            this.radLabel15.Text = "Nro. Documento";
+            // 
+            // nrodoccliente
+            // 
+            this.nrodoccliente.Location = new System.Drawing.Point(563, 52);
+            this.nrodoccliente.Name = "nrodoccliente";
+            this.nrodoccliente.Size = new System.Drawing.Size(212, 20);
+            this.nrodoccliente.TabIndex = 4;
+            // 
+            // clientebombo
+            // 
+            this.clientebombo.AutoSizeDropDownColumnMode = Telerik.WinControls.UI.BestFitColumnMode.DisplayedDataCells;
+            // 
+            // clientebombo.NestedRadGridView
+            // 
+            this.clientebombo.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.clientebombo.EditorControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientebombo.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.clientebombo.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.clientebombo.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.clientebombo.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.clientebombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.clientebombo.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.clientebombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.clientebombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition9;
+            this.clientebombo.EditorControl.Name = "NestedRadGridView";
+            this.clientebombo.EditorControl.ReadOnly = true;
+            this.clientebombo.EditorControl.ShowGroupPanel = false;
+            this.clientebombo.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.clientebombo.EditorControl.TabIndex = 0;
+            this.clientebombo.Location = new System.Drawing.Point(51, 21);
+            this.clientebombo.Name = "clientebombo";
+            this.clientebombo.Size = new System.Drawing.Size(445, 20);
+            this.clientebombo.TabIndex = 2;
+            this.clientebombo.TabStop = false;
+            // 
+            // formapagocombo
+            // 
+            this.formapagocombo.AutoSizeDropDownColumnMode = Telerik.WinControls.UI.BestFitColumnMode.DisplayedDataCells;
+            // 
+            // formapagocombo.NestedRadGridView
+            // 
+            this.formapagocombo.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.formapagocombo.EditorControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formapagocombo.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.formapagocombo.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.formapagocombo.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.formapagocombo.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.formapagocombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.formapagocombo.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.formapagocombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.formapagocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.formapagocombo.EditorControl.Name = "NestedRadGridView";
+            this.formapagocombo.EditorControl.ReadOnly = true;
+            this.formapagocombo.EditorControl.ShowGroupPanel = false;
+            this.formapagocombo.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.formapagocombo.EditorControl.TabIndex = 0;
+            this.formapagocombo.Location = new System.Drawing.Point(217, 132);
+            this.formapagocombo.Name = "formapagocombo";
+            this.formapagocombo.Size = new System.Drawing.Size(179, 20);
+            this.formapagocombo.TabIndex = 3;
+            this.formapagocombo.TabStop = false;
+            // 
+            // radLabel18
+            // 
+            this.radLabel18.Location = new System.Drawing.Point(218, 111);
+            this.radLabel18.Name = "radLabel18";
+            this.radLabel18.Size = new System.Drawing.Size(82, 18);
+            this.radLabel18.TabIndex = 4;
+            this.radLabel18.Text = "Forma de Pago";
+            // 
+            // crearclientebutton
+            // 
+            this.crearclientebutton.Location = new System.Drawing.Point(665, 124);
+            this.crearclientebutton.Name = "crearclientebutton";
+            this.crearclientebutton.Size = new System.Drawing.Size(84, 24);
+            this.crearclientebutton.TabIndex = 6;
+            this.crearclientebutton.Text = "Crear";
+            this.crearclientebutton.Click += new System.EventHandler(this.crearclientebutton_Click);
+            // 
+            // radLabel19
+            // 
+            this.radLabel19.Location = new System.Drawing.Point(304, 87);
+            this.radLabel19.Name = "radLabel19";
+            this.radLabel19.Size = new System.Drawing.Size(60, 18);
+            this.radLabel19.TabIndex = 8;
+            this.radLabel19.Text = "Domiciolio";
+            // 
+            // domiciliocliente
+            // 
+            this.domiciliocliente.Location = new System.Drawing.Point(304, 111);
+            this.domiciliocliente.Name = "domiciliocliente";
+            this.domiciliocliente.Size = new System.Drawing.Size(264, 20);
+            this.domiciliocliente.TabIndex = 7;
             // 
             // FacturaForm
             // 
@@ -778,28 +856,35 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nombreCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientebombo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).EndInit();
             this.radGroupBox3.ResumeLayout(false);
             this.radGroupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipodocCliente.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipodocCliente.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipodocCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nrodoccliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.respanteivacliente.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.respanteivacliente.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.respanteivacliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nombreCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodocCliente.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodocCliente.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodocCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.respanteivacliente.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.respanteivacliente.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.respanteivacliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nrodoccliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientebombo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crearclientebutton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domiciliocliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -850,5 +935,10 @@
         private Telerik.WinControls.UI.RadMultiColumnComboBox respanteivacliente;
         private Telerik.WinControls.UI.RadLabel radLabel17;
         private Telerik.WinControls.UI.RadPanel radPanel1;
+        private Telerik.WinControls.UI.RadLabel radLabel18;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox formapagocombo;
+        private Telerik.WinControls.UI.RadButton crearclientebutton;
+        private Telerik.WinControls.UI.RadLabel radLabel19;
+        private Telerik.WinControls.UI.RadTextBoxControl domiciliocliente;
     }
 }

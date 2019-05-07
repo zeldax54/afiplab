@@ -243,6 +243,10 @@ namespace CUbaBuscaApp
                return db.Table<afipService.DocTipo>();
             case "estado":
                return db.Table<EstadoFactura>();
+            case "formapago":
+                  return db.Table<formaspago>();
+            case "respanteivacliente":
+                 return db.Table<Responsabilidades>();
             }
             return null;
         }
@@ -373,7 +377,27 @@ namespace CUbaBuscaApp
         {
             return db.Find<Clientes>(clienteId);
         }
-     
+
+        public Clientes ExisteCliente(Clientes c)
+        {
+            return db.Table<Clientes>().FirstOrDefault(a => a.nrodoc == c.nrodoc && a.desctipodoc==c.desctipodoc);
+        }
+
+        public long AddCliente(Clientes c)
+        {
+            try
+            {
+                db.Insert(c);
+                return SQLite3.LastInsertRowid(db.Handle);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+       
+
 
     }
 }
