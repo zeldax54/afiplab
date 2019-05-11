@@ -396,8 +396,18 @@ namespace CUbaBuscaApp
             }
         }
 
-       
 
 
+        public formaspago FormapagoById(long idformapago)
+        {
+            try
+            {
+                return db.Find<formaspago>(idformapago);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

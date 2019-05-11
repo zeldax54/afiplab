@@ -228,7 +228,7 @@ namespace CUbaBuscaApp
         }
 
 
-        public static FECompConsultaResponse GetFactura(Factura f)
+        public static FECompConsResponse GetFactura(Factura f)
         {
             FECompConsultaReq req=new FECompConsultaReq()
             {
@@ -236,7 +236,7 @@ namespace CUbaBuscaApp
                 CbteTipo = (int) f.cbteId,
                 PtoVta = (int)f.ptovta
             };
-           return service.FECompConsultar(GetTicket(), req);
+           return service.FECompConsultar(GetTicket(), req).ResultGet;
         }
 
       

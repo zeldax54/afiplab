@@ -27,8 +27,8 @@ namespace CUbaBuscaApp
             //test
             if (f == null)
             {
-                _factura = DataContainer.Instance().dbManager.FacturaFromId(32);
-                _detalles = DataContainer.Instance().dbManager.DetallesFromFactura(32);
+                _factura = DataContainer.Instance().dbManager.FacturaFromId(34);
+                _detalles = DataContainer.Instance().dbManager.DetallesFromFactura(34);
             }
         }
 
@@ -39,6 +39,7 @@ namespace CUbaBuscaApp
             reportViewer1.Margin=new Padding(0,0,0,0);
             reportViewer1.ReportSource = r;
             reportViewer1.RefreshReport();
+            WindowState = FormWindowState.Maximized;
             //reportViewer1.ReportSource = reportBook;
         }
     }

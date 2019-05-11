@@ -24,10 +24,9 @@ namespace CUbaBuscaApp
             DataContainer.Instance().dbManager = bd;
             string tema = DataContainer.Instance().dbManager.ConfigByKey("tema");
             DataContainer.Instance().Themename = tema;
-              Application.Run(new Satrt());
+             Application.Run(new Satrt());
 
-
-          //  Application.Run(new PrinterForm());
+            //  Application.Run(new PrinterForm());
 
         }
     }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
@@ -36,10 +37,11 @@
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.tipofactcombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radLabel18 = new Telerik.WinControls.UI.RadLabel();
+            this.formapagocombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
             this.fecfacvDate = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
@@ -72,6 +74,9 @@
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.radLabel19 = new Telerik.WinControls.UI.RadLabel();
+            this.domiciliocliente = new Telerik.WinControls.UI.RadTextBoxControl();
+            this.crearclientebutton = new Telerik.WinControls.UI.RadButton();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
             this.nombreCliente = new Telerik.WinControls.UI.RadTextBoxControl();
@@ -81,17 +86,16 @@
             this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
             this.nrodoccliente = new Telerik.WinControls.UI.RadTextBoxControl();
             this.clientebombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.formapagocombo = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.radLabel18 = new Telerik.WinControls.UI.RadLabel();
-            this.crearclientebutton = new Telerik.WinControls.UI.RadButton();
-            this.radLabel19 = new Telerik.WinControls.UI.RadLabel();
-            this.domiciliocliente = new Telerik.WinControls.UI.RadTextBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipofactcombo.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fecfacvDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
@@ -134,6 +138,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domiciliocliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crearclientebutton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nombreCliente)).BeginInit();
@@ -149,13 +156,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientebombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.crearclientebutton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.domiciliocliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,6 +221,44 @@
             this.radGroupBox1.Size = new System.Drawing.Size(417, 229);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.Text = "Datos Base";
+            // 
+            // radLabel18
+            // 
+            this.radLabel18.Location = new System.Drawing.Point(218, 111);
+            this.radLabel18.Name = "radLabel18";
+            this.radLabel18.Size = new System.Drawing.Size(82, 18);
+            this.radLabel18.TabIndex = 4;
+            this.radLabel18.Text = "Forma de Pago";
+            // 
+            // formapagocombo
+            // 
+            this.formapagocombo.AutoSizeDropDownColumnMode = Telerik.WinControls.UI.BestFitColumnMode.DisplayedDataCells;
+            // 
+            // formapagocombo.NestedRadGridView
+            // 
+            this.formapagocombo.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.formapagocombo.EditorControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formapagocombo.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.formapagocombo.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.formapagocombo.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.formapagocombo.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.formapagocombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.formapagocombo.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.formapagocombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.formapagocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.formapagocombo.EditorControl.Name = "NestedRadGridView";
+            this.formapagocombo.EditorControl.ReadOnly = true;
+            this.formapagocombo.EditorControl.ShowGroupPanel = false;
+            this.formapagocombo.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.formapagocombo.EditorControl.TabIndex = 0;
+            this.formapagocombo.Location = new System.Drawing.Point(217, 132);
+            this.formapagocombo.Name = "formapagocombo";
+            this.formapagocombo.Size = new System.Drawing.Size(179, 20);
+            this.formapagocombo.TabIndex = 3;
+            this.formapagocombo.TabStop = false;
             // 
             // radLabel12
             // 
@@ -514,7 +552,7 @@
             // 
             // radButton2
             // 
-            this.radButton2.Location = new System.Drawing.Point(133, 247);
+            this.radButton2.Location = new System.Drawing.Point(734, 250);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(110, 24);
             this.radButton2.TabIndex = 7;
@@ -593,6 +631,30 @@
             this.radPanel1.Size = new System.Drawing.Size(807, 168);
             this.radPanel1.TabIndex = 6;
             this.radPanel1.Text = "Nuevo";
+            // 
+            // radLabel19
+            // 
+            this.radLabel19.Location = new System.Drawing.Point(304, 87);
+            this.radLabel19.Name = "radLabel19";
+            this.radLabel19.Size = new System.Drawing.Size(60, 18);
+            this.radLabel19.TabIndex = 8;
+            this.radLabel19.Text = "Domiciolio";
+            // 
+            // domiciliocliente
+            // 
+            this.domiciliocliente.Location = new System.Drawing.Point(304, 111);
+            this.domiciliocliente.Name = "domiciliocliente";
+            this.domiciliocliente.Size = new System.Drawing.Size(264, 20);
+            this.domiciliocliente.TabIndex = 7;
+            // 
+            // crearclientebutton
+            // 
+            this.crearclientebutton.Location = new System.Drawing.Point(665, 124);
+            this.crearclientebutton.Name = "crearclientebutton";
+            this.crearclientebutton.Size = new System.Drawing.Size(84, 24);
+            this.crearclientebutton.TabIndex = 6;
+            this.crearclientebutton.Text = "Crear";
+            this.crearclientebutton.Click += new System.EventHandler(this.crearclientebutton_Click);
             // 
             // radLabel13
             // 
@@ -731,68 +793,6 @@
             this.clientebombo.TabIndex = 2;
             this.clientebombo.TabStop = false;
             // 
-            // formapagocombo
-            // 
-            this.formapagocombo.AutoSizeDropDownColumnMode = Telerik.WinControls.UI.BestFitColumnMode.DisplayedDataCells;
-            // 
-            // formapagocombo.NestedRadGridView
-            // 
-            this.formapagocombo.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.formapagocombo.EditorControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.formapagocombo.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.formapagocombo.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // 
-            // 
-            this.formapagocombo.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.formapagocombo.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.formapagocombo.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.formapagocombo.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.formapagocombo.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.formapagocombo.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition2;
-            this.formapagocombo.EditorControl.Name = "NestedRadGridView";
-            this.formapagocombo.EditorControl.ReadOnly = true;
-            this.formapagocombo.EditorControl.ShowGroupPanel = false;
-            this.formapagocombo.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.formapagocombo.EditorControl.TabIndex = 0;
-            this.formapagocombo.Location = new System.Drawing.Point(217, 132);
-            this.formapagocombo.Name = "formapagocombo";
-            this.formapagocombo.Size = new System.Drawing.Size(179, 20);
-            this.formapagocombo.TabIndex = 3;
-            this.formapagocombo.TabStop = false;
-            // 
-            // radLabel18
-            // 
-            this.radLabel18.Location = new System.Drawing.Point(218, 111);
-            this.radLabel18.Name = "radLabel18";
-            this.radLabel18.Size = new System.Drawing.Size(82, 18);
-            this.radLabel18.TabIndex = 4;
-            this.radLabel18.Text = "Forma de Pago";
-            // 
-            // crearclientebutton
-            // 
-            this.crearclientebutton.Location = new System.Drawing.Point(665, 124);
-            this.crearclientebutton.Name = "crearclientebutton";
-            this.crearclientebutton.Size = new System.Drawing.Size(84, 24);
-            this.crearclientebutton.TabIndex = 6;
-            this.crearclientebutton.Text = "Crear";
-            this.crearclientebutton.Click += new System.EventHandler(this.crearclientebutton_Click);
-            // 
-            // radLabel19
-            // 
-            this.radLabel19.Location = new System.Drawing.Point(304, 87);
-            this.radLabel19.Name = "radLabel19";
-            this.radLabel19.Size = new System.Drawing.Size(60, 18);
-            this.radLabel19.TabIndex = 8;
-            this.radLabel19.Text = "Domiciolio";
-            // 
-            // domiciliocliente
-            // 
-            this.domiciliocliente.Location = new System.Drawing.Point(304, 111);
-            this.domiciliocliente.Name = "domiciliocliente";
-            this.domiciliocliente.Size = new System.Drawing.Size(264, 20);
-            this.domiciliocliente.TabIndex = 7;
-            // 
             // FacturaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -818,6 +818,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fecfacvDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
@@ -863,6 +867,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domiciliocliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crearclientebutton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nombreCliente)).EndInit();
@@ -878,13 +885,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientebombo.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientebombo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formapagocombo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.crearclientebutton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.domiciliocliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

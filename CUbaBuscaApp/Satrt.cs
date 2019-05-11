@@ -23,7 +23,16 @@ namespace CUbaBuscaApp
         {
             string tema = DataContainer.Instance().Themename;
             Helper.SetTheme(this.Controls,this);
-
+            radGridView1.AutoSizeRows = false;
+           
+            radGridView1.Columns.Add(new GridViewCommandColumn
+            {
+                HeaderText = "Imprimir",
+                Name = "Imprimir",
+                Width = 50,
+                IsVisible = false
+            });
+           
             radMenuComboItem2.Items.Add("Dark");
             radMenuComboItem2.Items.Add("Light");
             radMenuComboItem2.Items.Add("Metro");
@@ -42,28 +51,44 @@ namespace CUbaBuscaApp
             radGridView1.CellDoubleClick += RadGridView1_CellDoubleClick;
             WindowState = FormWindowState.Maximized;
             radDateTimePicker1.Value = DateTime.Now;
-
+         
         }
 
         private void RadGridView1_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
-
-            Factura f = (Factura)e.Row.DataBoundItem;
-            if (f != null) {
-                if (f.estadoId == 3 || f.estadoId == 6 || f.estadoId == 1)
+            if (!e.Column.Name.Contains("Imprimir"))
+            {
+                Factura f = (Factura)e.Row.DataBoundItem;
+                if (f != null)
                 {
-                    MessageManager.SowMessage("Comprobante rechazado o no emitido, se puede desechar.", ThemeName);
-                    return;
+                    if (f.estadoId == 3 || f.estadoId == 6 || f.estadoId == 1)
+                    {
+                        MessageManager.SowMessage("Comprobante rechazado o no emitido, se puede desechar.", ThemeName);
+                        return;
+                    }
                 }
-            }           
-                
-            IEnumerable< FacturaDetalles> detalles = DataContainer.Instance().dbManager.DetallesFromFactura((int)f.Id);
-            new FacturaForm(f, detalles).ShowDialog();
-            FormatoGrid(radDateTimePicker1.Value);
+
+                IEnumerable<FacturaDetalles> detalles = DataContainer.Instance().dbManager.DetallesFromFactura((int)f.Id);
+                new FacturaForm(f, detalles).ShowDialog();
+                FormatoGrid(radDateTimePicker1.Value);
+            }
+            else
+            {
+                Factura f = (Factura)e.Row.DataBoundItem;
+                var detalles = DataContainer.Instance().dbManager.DetallesFromFactura((int)f.Id);
+                new PrinterForm(f, detalles).ShowDialog();
+            }
         }
 
         private void RadGridView1_CellFormatting(object sender, CellFormattingEventArgs e)
         {
+          
+            if (e.Column.Name == "Imprimir")
+            {
+                GridCommandCellElement cmdCell = e.CellElement as GridCommandCellElement;
+                cmdCell.CommandButton.ImageAlignment = ContentAlignment.MiddleCenter;
+                cmdCell.CommandButton.Image = Properties.Resources.Document;
+            }
             if (e.Column.Name== "estadodesc" && e.CellElement.Value!=null)
             {
                 e.CellElement.DrawFill = true;
@@ -256,9 +281,19 @@ namespace CUbaBuscaApp
             foreach (var row in radGridView1.Rows) 
                 if (row.Cells["letrafact"].Value.ToString().Contains("Nota de Crédito") && row.Cells["estadoId"].Value.ToString()=="2")
                     row.Cells["total"].Value = Helper.myparseFloat( row.Cells["total"].Value.ToString())  * -1;
+            radGridView1.Columns[0].IsVisible = false;
+            radGridView1.EnableFiltering = false;
+            if (radGridView1.Rows.Count > 0)
+            {
+                if(radGridView1.Rows.Count>10)
+                    radGridView1.EnableFiltering = true;
+                radGridView1.Columns[0].IsVisible = true;
+                radGridView1.Columns[0].Width = 40;
+                for (var index = 0; index < radGridView1.Rows.Count; index++)
+                    radGridView1.Rows[index].Height = 30;
+                  
+                
 
-            if (radGridView1.Rows.Count > 0) {
-             
                 CustomSummaryItem summaryItem = new CustomSummaryItem("total", "Facturado: {0}",
                     GridAggregateFunction.Sum);
                 GridViewSummaryRowItem summaryRowItem = new GridViewSummaryRowItem();

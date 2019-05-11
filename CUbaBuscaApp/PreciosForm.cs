@@ -21,6 +21,8 @@ namespace CUbaBuscaApp
             InitializeComponent();           
             FechaVigencia = fechaVigencia;
             Isfromfact = pisfrofact;
+            if (Isfromfact)
+                radButton1.Visible = true;
         }
 
         private void PreciosForm_Load(object sender, EventArgs e)
@@ -42,9 +44,14 @@ namespace CUbaBuscaApp
             radGridView2.UserAddedRow += AddPrecio;
             radGridView2.UserDeletingRow += DeletePrecio;
             radGridView1.ClearSelection();
-            if (Isfromfact) {
+            if (Isfromfact)
+            {
+                radGridView1.AllowAddNewRow = false;
+                radGridView2.AllowAddNewRow = false;
+
                 Helper.InicializarGridReadObly(radGridView1, null);
                 Helper.InicializarGridReadObly(radGridView2, null);
+
             }
             
         }
@@ -98,12 +105,19 @@ namespace CUbaBuscaApp
 
         private void RadGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (radGridView1.SelectedRows.Count() > 0) {
+            if (radGridView1.SelectedRows.Any()) {
+              
                 var s = radGridView1.SelectedRows[0].DataBoundItem as Servicio;
                 radGridView2.DataSource = DataContainer.Instance().dbManager.PreciosListByService(s.Id,FechaVigencia,Isfromfact);
                 Helper.InicializarGrid(radGridView2, new[] { "Id", "ServicioId", "ivaId" });
                 if (Isfromfact)
+                {
+                    radGridView2.AllowAddNewRow = false;
+                    Helper.InicializarGridReadObly(radGridView2, null);
                     radGridView2.CellDoubleClick += RadGridView2_CellDoubleClick;
+                }
+
+                
             }           
 
         }
@@ -136,10 +150,22 @@ namespace CUbaBuscaApp
         {
             radGridView1.Width = (int)(this.Width * 0.3);
             radGridView2.Width = (int)(this.Width * 0.7);
+
+            radGridView1.Height = (int)(this.Height * 0.7);
+            radGridView2.Height = (int)(this.Height * 0.7);
         }
 
-       
-
-        
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            if (!radGridView2.SelectedRows.Any())
+                MessageManager.SowMessage("No hay precios para agregar a la factura.", ThemeName);
+            else
+            {
+                P = (Precio) radGridView2.SelectedRows[0].DataBoundItem;
+                this.Close();
+            }
+                
+            
+        }
     }
 }

@@ -107,7 +107,6 @@ namespace CUbaBuscaApp
                 GridCommandCellElement cmdCell = e.CellElement as GridCommandCellElement;
                 cmdCell.CommandButton.ImageAlignment = ContentAlignment.MiddleCenter;
                 cmdCell.CommandButton.Image = Properties.Resources.msoffice_Footer1;
-              
             }
         }
 

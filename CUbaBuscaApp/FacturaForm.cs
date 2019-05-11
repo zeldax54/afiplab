@@ -424,7 +424,7 @@ namespace CUbaBuscaApp
 
         private void radButton2_Click(object sender, EventArgs e)
         {
-            new PrinterForm().ShowDialog();
+            new PrinterForm(_Factura, _Detalles).ShowDialog();
         }
 
         private void crearclientebutton_Click(object sender, EventArgs e)

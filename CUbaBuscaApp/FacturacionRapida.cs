@@ -30,6 +30,8 @@ namespace CUbaBuscaApp
             radGridView1.TableElement.RowHeight = Properties.Resources.trash.Height;
             radGridView1.CellClick += RadGridView1_CellClick;
             radGridView1.UserDeletingRow += RadGridView1_UserDeletingRow;
+         
+
             this.WindowState = FormWindowState.Maximized;
         }
 

@@ -42,5 +42,15 @@ namespace CUbaBuscaApp.Properties {
                 return ((string)(this["CUbaBuscaApp_afipService_Service"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("afip.db")]
+        public string jj {
+            get {
+                return ((string)(this["jj"]));
+            }
+        }
     }
 }

@@ -32,10 +32,13 @@
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.radGridView2 = new Telerik.WinControls.UI.RadGridView();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).BeginInit();
+            this.radGridView2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +56,7 @@
             // 
             // radGridView2
             // 
+            this.radGridView2.Controls.Add(this.radButton1);
             this.radGridView2.Dock = System.Windows.Forms.DockStyle.Right;
             this.radGridView2.Location = new System.Drawing.Point(365, 0);
             // 
@@ -62,6 +66,16 @@
             this.radGridView2.Name = "radGridView2";
             this.radGridView2.Size = new System.Drawing.Size(533, 426);
             this.radGridView2.TabIndex = 0;
+            // 
+            // radButton1
+            // 
+            this.radButton1.Location = new System.Drawing.Point(386, 378);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(110, 24);
+            this.radButton1.TabIndex = 1;
+            this.radButton1.Text = "Agregar Precio";
+            this.radButton1.Visible = false;
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // PreciosForm
             // 
@@ -82,6 +96,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).EndInit();
+            this.radGridView2.ResumeLayout(false);
+            this.radGridView2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -91,5 +108,6 @@
 
         private Telerik.WinControls.UI.RadGridView radGridView1;
         private Telerik.WinControls.UI.RadGridView radGridView2;
+        private Telerik.WinControls.UI.RadButton radButton1;
     }
 }
