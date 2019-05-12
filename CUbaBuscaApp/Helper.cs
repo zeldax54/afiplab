@@ -70,10 +70,17 @@ namespace CUbaBuscaApp
 
         }
 
-        public static void InicializarGrid(RadGridView r,string[]columnsBlock,bool fillDock=false) {
+        public static void InicializarGrid(RadGridView r, string[] columnsBlock, bool fillDock = false, Dictionary<string,string> columnas=null) {
 
             foreach (var colum in r.Columns)
                 colum.HeaderText = colum.Name.ToUpper();
+            if(columnas != null && columnas.Any())
+            {
+                foreach(var c in columnas)
+                {
+                    r.Columns[c.Key].HeaderText = c.Value;
+                }
+            }
 
             r.AllowAddNewRow = true;
             r.AllowAddNewRow = true;

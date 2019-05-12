@@ -109,7 +109,7 @@ namespace CUbaBuscaApp
                 case RadGridStringId.ClearValueMenuItem: return "Clear Value";
                 case RadGridStringId.CopyMenuItem: return "Copy";
                 case RadGridStringId.CutMenuItem: return "Cut";
-                case RadGridStringId.AddNewRowString: return "Click here to add a new row";
+                case RadGridStringId.AddNewRowString: return "Agregar Nuevo Elemento";
                 case RadGridStringId.ConditionalFormattingSortAlphabetically: return "Sort columns alphabetically";
                 case RadGridStringId.ConditionalFormattingCaption: return "Conditional Formatting Rules Manager";
                 case RadGridStringId.ConditionalFormattingLblColumn: return "Format only cells with";
