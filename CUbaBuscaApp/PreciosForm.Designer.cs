@@ -49,8 +49,11 @@
             // 
             // 
             // 
+            this.radGridView1.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
+            this.radGridView1.MasterTemplate.ShowFilteringRow = false;
             this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
+            this.radGridView1.ShowGroupPanel = false;
             this.radGridView1.Size = new System.Drawing.Size(359, 426);
             this.radGridView1.TabIndex = 0;
             // 
@@ -65,6 +68,7 @@
             this.radGridView2.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
             this.radGridView2.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.radGridView2.Name = "radGridView2";
+            this.radGridView2.ShowGroupPanel = false;
             this.radGridView2.Size = new System.Drawing.Size(533, 426);
             this.radGridView2.TabIndex = 0;
             // 

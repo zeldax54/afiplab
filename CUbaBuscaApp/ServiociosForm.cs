@@ -23,7 +23,7 @@ namespace CUbaBuscaApp
             Helper.SetTheme(this.Controls, this);
             radGridView1.DataSource = DataContainer.Instance().dbManager.ServiciosList();
             Dictionary<string, string> Columna = new Dictionary<string, string>();
-            Columna.Add("nombre", "ASDZXC");
+            Columna.Add("nombre", "Servicio");
             Helper.InicializarGrid(radGridView1, new[] { "Id" },false,Columna);          
             radGridView1.CellEndEdit += RadGridView1_CellEndEdit;
             radGridView1.UserAddedRow += RadGridView1_UserAddedRow;

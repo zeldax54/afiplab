@@ -1,1 +1,1 @@
-2019-05-12 15:27:47,831 [1] INFO  CUbaBuscaApp.Logger - Aplicacion iniciada
+2019-05-15 00:36:09,411 [1] INFO  CUbaBuscaApp.Logger - Aplicacion iniciada
