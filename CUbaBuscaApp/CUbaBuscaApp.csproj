@@ -157,6 +157,12 @@
     <Compile Include="MailReader.cs" />
     <Compile Include="MessageManager.cs" />
     <Compile Include="MyEnglishRadGridLocalizationProvider.cs" />
+    <Compile Include="NewStartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewStartForm.Designer.cs">
+      <DependentUpon>NewStartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PreciosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IvaEditorForm.resx">
       <DependentUpon>IvaEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewStartForm.resx">
+      <DependentUpon>NewStartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PreciosForm.resx">
       <DependentUpon>PreciosForm.cs</DependentUpon>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using SQLite;
 namespace CUbaBuscaApp
@@ -408,6 +409,11 @@ namespace CUbaBuscaApp
             {
                 throw new Exception(e.Message);
             }
+        }
+
+        public IEnumerable<Columnas> GetColumnasFromBd(string tableName)
+        {
+            return db.Table<Columnas>().Where(a => a.tablename == tableName);
         }
     }
 }

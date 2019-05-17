@@ -20,6 +20,7 @@ namespace CUbaBuscaApp
             {
                 db.CreateTable<CbteTipo>();
                 db.CreateTable<Clientes>();
+                db.CreateTable<Columnas>();
                 db.CreateTable<ConceptoTipo>();
                 db.CreateTable<Configuraciones>();
                 db.CreateTable<DocTipo>();
@@ -70,6 +71,19 @@ namespace CUbaBuscaApp
         public String desctipodoc { get; set; }
         
         public String docmicilio { get; set; }
+        
+    }
+    
+    public partial class Columnas
+    {
+        [PrimaryKey, AutoIncrement]
+        public Int64 id { get; set; }
+        
+        public String tablename { get; set; }
+        
+        public String columname { get; set; }
+        
+        public String columntext { get; set; }
         
     }
     

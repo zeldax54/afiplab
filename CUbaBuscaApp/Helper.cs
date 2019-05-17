@@ -70,16 +70,16 @@ namespace CUbaBuscaApp
 
         }
 
-        public static void InicializarGrid(RadGridView r,string[]columnsBlock,bool fillDock=false) {
+        public static void InicializarGrid(RadGridView r,string[]columnsBlock,bool fillDock=false)
+        {
 
-            foreach (var colum in r.Columns)
-                colum.HeaderText = colum.Name.ToUpper();
+            SetHeaders(r);
 
             r.AllowAddNewRow = true;
             r.AllowAddNewRow = true;
             r.AllowDeleteRow = true;            
             if(fillDock)
-            r.Dock = System.Windows.Forms.DockStyle.Fill;           
+                r.Dock = System.Windows.Forms.DockStyle.Fill;           
             foreach (var colum in columnsBlock) {
                 r.Columns[colum].ReadOnly = true;
                 r.Columns[colum].IsVisible = false;
@@ -91,8 +91,7 @@ namespace CUbaBuscaApp
 
         public static void InicializarGridReadObly(RadGridView r, string[] columnsBlock)
         {
-            foreach (var colum in r.Columns)
-                colum.HeaderText = colum.Name.ToUpper();        
+            SetHeaders(r);
             r.AllowAddNewRow = false;
             r.AllowDeleteRow = false;
             r.AllowEditRow = false;
@@ -100,16 +99,29 @@ namespace CUbaBuscaApp
             
             if(columnsBlock!=null)
              foreach (var colum in columnsBlock)
-              {
+             {
                 r.Columns[colum].ReadOnly = true;
                 r.Columns[colum].IsVisible = false;
-              }
+             }
             r.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
             r.EnableFiltering = true;
 
         }
 
-       
+        private static void SetHeaders(RadGridView r)
+        {
+            var tableName = GetNameFromAssably(r.DataSource.GetType().AssemblyQualifiedName);
+            var names = DataContainer.Instance().dbManager.GetColumnasFromBd(tableName);
+            var columnases = names as Columnas[] ?? names.ToArray();
+            if (columnases.Any())
+                foreach (var n in columnases)
+                    r.Columns[n.columname].HeaderText = n.columntext;
+            else
+                foreach (var colum in r.Columns)
+                    colum.HeaderText = colum.Name.ToUpper();
+        }
+
+
         public static void OcularColumsCombo(RadMultiColumnComboBox [] combo,IEnumerable<string> hide)
         {
 
@@ -124,6 +136,22 @@ namespace CUbaBuscaApp
             }
 
          
+        }
+
+        private static string GetNameFromAssably(string assambly)
+        {
+            string search = "CUbaBuscaApp.";
+            int pos = assambly.LastIndexOf(search);
+            string word=String.Empty;
+            for (int i = pos + search.Length; i < assambly.Length; i++)
+            {
+                if (assambly[i] == ',')
+                    break;
+                word += assambly[i];
+
+            }
+            
+            return word;
         }
 
         public static void HideSomeColums(RadGridView r, string[] columnsBlock) {
