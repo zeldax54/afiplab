@@ -30,9 +30,8 @@ namespace CUbaBuscaApp
             Helper.SetTheme(Controls, this);
             radGridView1.DataSource = DataContainer.Instance().dbManager.ServiciosList();
 
-            Dictionary<string, string> Columna = new Dictionary<string, string>();
-            Columna.Add("nombre", "Servicio");
-            Helper.InicializarGrid(radGridView1, new[] { "Id" }, false, Columna);
+           
+            Helper.InicializarGrid(radGridView1, new[] { "Id" }, false);
        
             radGridView1.MultiSelect = false;
             radGridView1.AllowEditRow = false;
@@ -112,13 +111,10 @@ namespace CUbaBuscaApp
                 var s = radGridView1.SelectedRows[0].DataBoundItem as Servicio;
                 radGridView2.DataSource = DataContainer.Instance().dbManager.PreciosListByService(s.Id,FechaVigencia,Isfromfact);
 
-                Dictionary<string, string> Columna = new Dictionary<string, string>();
-                Columna.Add("vigenciaDesde", "Vigencia Desde");
-                Columna.Add("vigenciaHasta", "Vigencia Hasta");
-                Columna.Add("ivamonto", "Porcentaje Iva");
+         
 
 
-                Helper.InicializarGrid(radGridView2, new[] { "Id", "ServicioId", "ivaId" }, false, Columna);
+                Helper.InicializarGrid(radGridView2, new[] { "Id", "ServicioId", "ivaId" }, false);
                 if (Isfromfact)
                 {
                     radGridView2.AllowAddNewRow = false;
