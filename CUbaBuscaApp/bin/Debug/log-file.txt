@@ -1,2 +1,1 @@
-2019-05-16 23:14:25,742 [1] INFO  CUbaBuscaApp.Logger - Aplicacion iniciada
-2019-05-16 23:14:38,937 [1] INFO  CUbaBuscaApp.Logger - Error cambiando tema Referencia a objeto no establecida como instancia de un objeto.
+2019-05-16 23:26:20,993 [1] INFO  CUbaBuscaApp.Logger - Aplicacion iniciada
