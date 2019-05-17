@@ -536,6 +536,8 @@
             // 
             // 
             // 
+            this.detallesGrid.MasterTemplate.AddNewRowPosition = Telerik.WinControls.UI.SystemRowPosition.Bottom;
+            this.detallesGrid.MasterTemplate.AllowDragToGroup = false;
             this.detallesGrid.MasterTemplate.ViewDefinition = tableViewDefinition6;
             this.detallesGrid.Name = "detallesGrid";
             this.detallesGrid.Size = new System.Drawing.Size(822, 232);

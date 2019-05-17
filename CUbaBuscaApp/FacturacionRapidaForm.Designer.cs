@@ -37,6 +37,7 @@
             // 
             // radGridView1
             // 
+            this.radGridView1.AutoSizeRows = true;
             this.radGridView1.Location = new System.Drawing.Point(37, 31);
             // 
             // 
