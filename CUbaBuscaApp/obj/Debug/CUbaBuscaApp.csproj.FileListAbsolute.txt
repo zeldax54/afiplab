@@ -234,3 +234,4 @@ D:\Users\Arriba\Documents\Repositorio\Facturador\CUbaBuscaApp\obj\Debug\CUbaBusc
 D:\Users\Arriba\Documents\Repositorio\Facturador\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.exe
 D:\Users\Arriba\Documents\Repositorio\Facturador\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.pdb
 C:\Users\zelda_b48pnza\source\repos\Afip\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.NewStartForm.resources
+D:\Users\Arriba\Documents\Repositorio\Facturador\CUbaBuscaApp\obj\Debug\CUbaBuscaApp.NewStartForm.resources
