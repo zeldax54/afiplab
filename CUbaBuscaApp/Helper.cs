@@ -110,15 +110,18 @@ namespace CUbaBuscaApp
 
         private static void SetHeaders(RadGridView r)
         {
-            var tableName = GetNameFromAssably(r.DataSource.GetType().AssemblyQualifiedName);
-            var names = DataContainer.Instance().dbManager.GetColumnasFromBd(tableName);
-            var columnases = names as Columnas[] ?? names.ToArray();
-            if (columnases.Any())
-                foreach (var n in columnases)
-                    r.Columns[n.columname].HeaderText = n.columntext;
-            else
-                foreach (var colum in r.Columns)
-                    colum.HeaderText = colum.Name.ToUpper();
+            if (r.DataSource != null)
+            {
+                var tableName = GetNameFromAssably(r.DataSource.GetType().AssemblyQualifiedName);
+                var names = DataContainer.Instance().dbManager.GetColumnasFromBd(tableName);
+                var columnases = names as Columnas[] ?? names.ToArray();
+                if (columnases.Any())
+                    foreach (var n in columnases)
+                        r.Columns[n.columname].HeaderText = n.columntext;
+                else
+                    foreach (var colum in r.Columns)
+                        colum.HeaderText = colum.Name.ToUpper();
+            }
         }
 
 
